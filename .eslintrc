@@ -38,7 +38,7 @@
         "pathGroups": [
           {
             "pattern": "{react*, react*/**}",
-            "group": "builtin",
+            "group": "external",
             "position": "before"
           }
         ],
