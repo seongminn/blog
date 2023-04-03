@@ -1,10 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import { graphql } from 'gatsby';
+
 import Template from '@components/common/Template';
+import { graphql } from 'gatsby';
+
+import CommentWidget from '@/components/post/CommentWidget';
+import PostContent from '@/components/post/PostContent';
 import PostHead from '@/components/post/PostHead';
 import { PostPageItemProps } from '@/types/PostItem.types';
-import PostContent from '@/components/post/PostContent';
-import CommentWidget from '@/components/post/CommentWidget';
 
 type PostTemplateProps = {
   location: { href: string };

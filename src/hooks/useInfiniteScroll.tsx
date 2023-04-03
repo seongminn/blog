@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, MutableRefObject } from 'react';
+
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 export type useInfiniteScrollType = {

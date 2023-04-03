@@ -1,7 +1,8 @@
+import { FunctionComponent } from 'react';
+
 import styled from '@emotion/styled';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent } from 'react';
 
 type PostHeadInfoProps = {
   title: string;

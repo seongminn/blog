@@ -1,6 +1,7 @@
+import { FunctionComponent, ReactNode } from 'react';
+
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { FunctionComponent, ReactNode } from 'react';
 
 export type CategoryListProps = {
   selectedCategory: string;
