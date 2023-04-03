@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import Template from '@components/common/Template';
 import { graphql } from 'gatsby';
 
+import Template from '@/components/common/Template';
 import CommentWidget from '@/components/post/CommentWidget';
 import PostContent from '@/components/post/PostContent';
 import PostHead from '@/components/post/PostHead';

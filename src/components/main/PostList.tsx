@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
 
 import styled from '@emotion/styled';
-import useInfiniteScroll, {
-  useInfiniteScrollType,
-} from '@hooks/useInfiniteScroll';
 
 import PostItem from './PostItem';
 
+import useInfiniteScroll, {
+  useInfiniteScrollType,
+} from '@/hooks/useInfiniteScroll';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type PostListProps = {
