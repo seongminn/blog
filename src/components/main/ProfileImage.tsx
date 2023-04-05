@@ -1,7 +1,6 @@
-import React, { FunctionComponent } from 'react';
-
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import React, { FunctionComponent } from 'react';
 
 const ProfileImageWrapper = styled(GatsbyImage)`
   width: 120px;

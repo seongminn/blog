@@ -1,7 +1,6 @@
-import { FunctionComponent } from 'react';
-
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { FunctionComponent } from 'react';
 
 import PostHeadInfo from './PostHeadInfo';
 

@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react';
-
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { FunctionComponent } from 'react';
 
 import { PostFrontmatterType } from '@/types/PostItem.types';
 

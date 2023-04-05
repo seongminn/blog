@@ -1,6 +1,5 @@
-import React, { FunctionComponent } from 'react';
-
 import styled from '@emotion/styled';
+import React, { FunctionComponent } from 'react';
 
 const Footer: FunctionComponent = function () {
   return (
