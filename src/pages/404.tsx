@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { FunctionComponent } from 'react';
 
-import GlobalStyle from '@/components/common/GlobalStyle';
+import GlobalStyle from '@/styles/GlobalStyle';
 
 const NotFoundPage: FunctionComponent = function () {
   return (
