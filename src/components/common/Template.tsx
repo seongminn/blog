@@ -1,8 +1,9 @@
-import { FunctionComponent, ReactNode } from 'react';
-import GlobalStyle from './GlobalStyle';
 import styled from '@emotion/styled';
-import Footer from './Footer';
+import { FunctionComponent, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
+
+import Footer from './Footer';
+import GlobalStyle from './GlobalStyle';
 
 type TemplateProps = {
   children: ReactNode;

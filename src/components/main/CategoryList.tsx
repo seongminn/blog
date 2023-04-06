@@ -53,13 +53,14 @@ const Wrapper = styled.nav`
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))`
   margin-right: 20px;
   padding: 5px 0;
   font-size: 18px;
-  font-weight: ${active => (active ? '800' : '400')};
+  font-weight: ${props => (props.active ? 800 : 400)};
   cursor: pointer;
 
   &:last-of-type {

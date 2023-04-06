@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
+import { FunctionComponent } from 'react';
+
+import PostItem from './PostItem';
+
 import useInfiniteScroll, {
   useInfiniteScrollType,
-} from '@hooks/useInfiniteScroll';
-import { FunctionComponent } from 'react';
+} from '@/hooks/useInfiniteScroll';
 import { PostPageItemProps } from '@/types/PostItem.types';
-import PostItem from './PostItem';
 
 type PostListProps = {
   selectedCategory: string;
