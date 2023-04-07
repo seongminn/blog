@@ -1,10 +1,11 @@
 import { graphql } from 'gatsby';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
-import Template from '@/components/common/Template';
+import SEO from '@/components/common/SEO';
 import CommentWidget from '@/components/post/CommentWidget';
 import PostContent from '@/components/post/PostContent';
 import PostHead from '@/components/post/PostHead';
+import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type PostTemplateProps = {
@@ -38,7 +39,8 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
     },
   } = edges[0];
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Layout>
+      <SEO title={title} description={summary} url={href} image={publicURL} />
       <PostHead
         title={title}
         date={date}
@@ -47,7 +49,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       />
       <PostContent html={html} />
       <CommentWidget />
-    </Template>
+    </Layout>
   );
 };
 

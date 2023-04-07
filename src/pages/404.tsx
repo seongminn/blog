@@ -1,20 +1,24 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { FunctionComponent } from 'react';
 
+import Layout from '@/layouts';
 import GlobalStyle from '@/styles/GlobalStyle';
 
 const NotFoundPage: FunctionComponent = function () {
   return (
-    <NotFoundPageWrapper>
-      <GlobalStyle />
-      <NotFoundText>404</NotFoundText>
-      <NotFoundDescription>
-        찾을 수 없는 페이지입니다. <br />
-        다른 컨텐츠를 보러 가시겠어요?
-      </NotFoundDescription>
-      <GoToMainButton to="/">메인으로</GoToMainButton>
-    </NotFoundPageWrapper>
+    <Layout>
+      <NotFoundPageWrapper>
+        <GlobalStyle />
+        <NotFoundText>404</NotFoundText>
+        <NotFoundDescription>
+          찾을 수 없는 페이지입니다. <br />
+          다른 컨텐츠를 보러 가시겠어요?
+        </NotFoundDescription>
+        <GoToMainButton to="/">메인으로</GoToMainButton>
+      </NotFoundPageWrapper>
+    </Layout>
   );
 };
 
@@ -32,7 +36,14 @@ const NotFoundText = styled.div`
   font-size: 150px;
   font-weight: 800;
 
-  @media (max-width) {
+  ${({ theme }) =>
+    css`
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: ${theme.colors.primary_gradient};
+    `}
+
+  @media (max-width: 768px) {
     font-size: 100px;
   }
 `;

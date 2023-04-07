@@ -1,14 +1,15 @@
 import { graphql } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
-import React, { FunctionComponent, useMemo } from 'react';
+import { FunctionComponent, useMemo } from 'react';
 
-import Template from '@/components/common/Template';
+import SEO from '@/components/common/SEO';
 import CategoryList, {
   CategoryListProps,
 } from '@/components/main/CategoryList';
 import Introduction from '@/components/main/Introduction';
 import PostList from '@/components/main/PostList';
+import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type IndexPageProps = {
@@ -79,19 +80,20 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <Layout>
+      <SEO
+        title={title}
+        description={description}
+        image={publicURL}
+        url={siteUrl}
+      />
       <Introduction profileImage={gatsbyImageData} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
       <PostList selectedCategory={selectedCategory} posts={edges} />
-    </Template>
+    </Layout>
   );
 };
 
