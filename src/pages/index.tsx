@@ -3,11 +3,11 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import { FunctionComponent, useMemo } from 'react';
 
+import Banner from '@/components/common/Banner';
 import SEO from '@/components/common/SEO';
 import CategoryList, {
   CategoryListProps,
 } from '@/components/main/CategoryList';
-import Introduction from '@/components/main/Introduction';
 import PostList from '@/components/main/PostList';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
@@ -84,10 +84,10 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       <SEO
         title={title}
         description={description}
-        image={publicURL}
-        url={siteUrl}
+        thumbnailSrc={publicURL}
+        siteUrl={siteUrl}
       />
-      <Introduction profileImage={gatsbyImageData} />
+      <Banner imageData={gatsbyImageData} title={title} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -131,9 +131,9 @@ export const getPostList = graphql`
         }
       }
     }
-    file(name: { eq: "profile-image" }) {
+    file(name: { eq: "background" }) {
       childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
+        gatsbyImageData(height: 400)
       }
       publicURL
     }

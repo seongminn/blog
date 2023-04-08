@@ -1,23 +1,22 @@
 import { ThemeProvider } from '@emotion/react';
-import styled from '@emotion/styled';
+import { ReactNode } from 'react';
 
 import Footer from '@/components/common/Footer';
 import GlobalStyle from '@/styles/GlobalStyle';
 import theme from '@/styles/theme';
 
-function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+function Layout({ children }: LayoutProps) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <BodyWrapper>{children}</BodyWrapper>
+      <main>{children}</main>
       <Footer />
     </ThemeProvider>
   );
 }
 
 export default Layout;
-
-const BodyWrapper = styled.main`
-  margin: 0 auto;
-  max-width: 900px;
-`;

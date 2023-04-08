@@ -24,7 +24,7 @@ const colors = {
 
 const layouts = {
   maxWidth: '900px',
-  headerHeight: '400px',
+  headerHeight: '480px',
 };
 
 const theme = {
