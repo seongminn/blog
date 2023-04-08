@@ -13,7 +13,7 @@ type HeaderProps = {
   imageData: IGatsbyImageData;
 };
 
-function Header({ title, imageData }: HeaderProps) {
+function Banner({ title, imageData }: HeaderProps) {
   return (
     <HeaderWrapper>
       <BackgroundImage image={imageData} alt={`${title} Image`} />
@@ -24,7 +24,7 @@ function Header({ title, imageData }: HeaderProps) {
   );
 }
 
-export default Header;
+export default Banner;
 
 const HeaderWrapper = styled.section`
   position: relative;
