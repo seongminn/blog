@@ -80,14 +80,14 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Layout>
-      <SEO
-        title={title}
-        description={description}
-        image={publicURL}
-        url={siteUrl}
-      />
-      <Introduction profileImage={gatsbyImageData} />
+    <Layout
+      title={title}
+      description={description}
+      imageData={gatsbyImageData}
+      imageUrl={publicURL}
+      siteUrl={siteUrl}
+    >
+      {/* <Introduction profileImage={gatsbyImageData} /> */}
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -131,9 +131,9 @@ export const getPostList = graphql`
         }
       }
     }
-    file(name: { eq: "profile-image" }) {
+    file(name: { eq: "background" }) {
       childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
+        gatsbyImageData(height: 400)
       }
       publicURL
     }
