@@ -1,13 +1,15 @@
+// import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 type SeoProps = {
   title: string;
   description: string;
-  url: string;
-  image: string;
+  siteUrl: string;
+  thumbnailSrc: string;
 };
 
-function SEO({ title, description, image, url }: SeoProps) {
+function SEO({ title, description, thumbnailSrc, siteUrl }: SeoProps) {
+  console.log(siteUrl);
   return (
     <Helmet>
       <title>{title}</title>
@@ -19,14 +21,14 @@ function SEO({ title, description, image, url }: SeoProps) {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:url" content={url} />
+      <meta property="og:image" content={thumbnailSrc} />
+      <meta property="og:url" content={siteUrl} />
       <meta property="og:site_name" content={title} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={thumbnailSrc} />
       <meta name="twitter:site" content="@seongminn" />
       <meta name="twitter:creator" content="@seongminn" />
 

@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import { FunctionComponent } from 'react';
 
+import SEO from '@/components/common/SEO';
 import CommentWidget from '@/components/post/CommentWidget';
 import PostContent from '@/components/post/PostContent';
 import Layout from '@/layouts';
@@ -37,15 +38,13 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
     },
   } = edges[0];
   return (
-    <Layout
-      title={title}
-      description={summary}
-      imageData={gatsbyImageData}
-      imageUrl={publicURL}
-      siteUrl={href}
-      date={date}
-      categories={categories}
-    >
+    <Layout>
+      <SEO
+        title={title}
+        description={summary}
+        thumbnailSrc={publicURL}
+        siteUrl={href}
+      />
       <PostContent html={html} />
       <CommentWidget />
     </Layout>

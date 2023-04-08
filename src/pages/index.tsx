@@ -3,6 +3,8 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import { FunctionComponent, useMemo } from 'react';
 
+import Banner from '@/components/common/Banner';
+import SEO from '@/components/common/SEO';
 import CategoryList, {
   CategoryListProps,
 } from '@/components/main/CategoryList';
@@ -78,14 +80,14 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      imageData={gatsbyImageData}
-      imageUrl={publicURL}
-      siteUrl={siteUrl}
-    >
-      {/* <Introduction profileImage={gatsbyImageData} /> */}
+    <Layout>
+      <SEO
+        title={title}
+        description={description}
+        thumbnailSrc={publicURL}
+        siteUrl={siteUrl}
+      />
+      <Banner imageData={gatsbyImageData} title={title} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
