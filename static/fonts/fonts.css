@@ -1,4 +1,13 @@
 @font-face {
+  font-family: 'Blinker';
+  src: local('Blinker');
+  src: url('/fonts/Blinker-Bold.woff2') format('woff2');
+  src: url('/fonts/Blinker-Bold.woff') format('woff');
+  font-weight: normal;
+  font-display: block;
+}
+
+@font-face {
   font-family: 'Pretendard';
   src: local('Pretendard');
   src: url('/fonts/Pretendard-Regular.subset.woff2') format('woff2');
