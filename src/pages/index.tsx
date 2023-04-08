@@ -3,11 +3,9 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import { FunctionComponent, useMemo } from 'react';
 
-import SEO from '@/components/common/SEO';
 import CategoryList, {
   CategoryListProps,
 } from '@/components/main/CategoryList';
-import Introduction from '@/components/main/Introduction';
 import PostList from '@/components/main/PostList';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';

@@ -3,7 +3,6 @@ import { FunctionComponent } from 'react';
 
 import CommentWidget from '@/components/post/CommentWidget';
 import PostContent from '@/components/post/PostContent';
-import PostHead from '@/components/post/PostHead';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
