@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 
 import * as Styled from './style';
+import Icon from '../Icon';
 
 function Navigation() {
   return (
     <Styled.Root>
-      <Styled.Logo to="/">seongminn.dev</Styled.Logo>
       <Styled.NavItems>
         <li>
           <Link to="/about">About</Link>
@@ -14,6 +14,9 @@ function Navigation() {
           <Link to="/post">Post</Link>
         </li>
       </Styled.NavItems>
+      <Styled.Anchor target="_blank" href="https://github.com/seongminn">
+        <Icon iconName="github" />
+      </Styled.Anchor>
     </Styled.Root>
   );
 }
