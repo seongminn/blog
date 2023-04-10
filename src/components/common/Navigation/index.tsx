@@ -14,9 +14,7 @@ function Navigation() {
           <Link to="/post">Post</Link>
         </li>
       </Styled.NavItems>
-      <Styled.Anchor target="_blank" href="https://github.com/seongminn">
-        <Icon iconName="github" />
-      </Styled.Anchor>
+      <Icon iconName="magnifier" color="black" style={{ marginLeft: '20px' }} />
     </Styled.Root>
   );
 }

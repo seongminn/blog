@@ -15,7 +15,3 @@ export const NavItems = styled.ul`
     margin: 0 20px;
   }
 `;
-
-export const Anchor = styled.a`
-  margin-left: 20px;
-`;

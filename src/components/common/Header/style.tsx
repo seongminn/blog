@@ -25,4 +25,8 @@ export const Logo = styled(Link)`
   font-family: 'Blinker';
   font-size: 32px;
   font-weight: bold;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
 `;
