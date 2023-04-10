@@ -1,14 +1,10 @@
 import { graphql } from 'gatsby';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-import queryString, { ParsedQuery } from 'query-string';
-import { FunctionComponent, useMemo } from 'react';
+import { FunctionComponent } from 'react';
 
-import Banner from '@/components/common/Banner';
 import SEO from '@/components/common/SEO';
-import CategoryList, {
-  CategoryListProps,
-} from '@/components/main/CategoryList';
-import PostList from '@/components/main/PostList';
+import Contents from '@/components/common/Thumbnails';
+import { CATEGORY_TYPE } from '@/constants/enum';
+import { INITIAL_COUNT } from '@/constants/initial';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
@@ -28,57 +24,21 @@ type IndexPageProps = {
       edges: PostPageItemProps[];
     };
     file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData;
-      };
       publicURL: string;
     };
   };
 };
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
-  location: { search },
+  // location: { search },
   data: {
     site: {
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
+    file: { publicURL },
   },
 }) {
-  const parsed: ParsedQuery<string> = queryString.parse(search);
-  const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
-      : parsed.category;
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: PostPageItemProps,
-        ) => {
-          categories.forEach(category => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
-
-          list['All']++;
-
-          return list;
-        },
-        { All: 0 },
-      ),
-    [],
-  );
-
   return (
     <Layout>
       <SEO
@@ -87,12 +47,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         thumbnailSrc={publicURL}
         siteUrl={siteUrl}
       />
-      <Banner imageData={gatsbyImageData} title={title} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
+      <Contents
+        posts={edges}
+        category={CATEGORY_TYPE.ALL}
+        count={INITIAL_COUNT}
       />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
     </Layout>
   );
 };
@@ -120,11 +79,12 @@ export const getPostList = graphql`
           frontmatter {
             title
             date(formatString: "YYYY.MM.DD.")
-            categories
+            category
             summary
+            tags
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 768, height: 400)
+                gatsbyImageData(width: 170, height: 170)
               }
             }
           }
@@ -132,9 +92,6 @@ export const getPostList = graphql`
       }
     }
     file(name: { eq: "background" }) {
-      childImageSharp {
-        gatsbyImageData(height: 400)
-      }
       publicURL
     }
   }

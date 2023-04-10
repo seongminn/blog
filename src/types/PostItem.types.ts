@@ -3,7 +3,8 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 export type PostFrontmatterType = {
   title: string;
   date: string;
-  categories: string[];
+  category: string;
+  tags: string[];
   summary: string;
   thumbnail: {
     childImageSharp: {

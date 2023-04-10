@@ -29,11 +29,8 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         title,
         summary,
         date,
-        categories,
-        thumbnail: {
-          childImageSharp: { gatsbyImageData },
-          publicURL,
-        },
+        category,
+        thumbnail: { publicURL },
       },
     },
   } = edges[0];
@@ -63,11 +60,9 @@ export const queryMarkdownDataBySlug = graphql`
             title
             summary
             date(formatString: "YYYY.MM.DD.")
-            categories
+            category
             thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
+              publicURL
             }
           }
         }
