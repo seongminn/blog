@@ -2,23 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-function Navigation() {
-  return (
-    <NavWrapper>
-      <Logo to="/">seongminn.dev</Logo>
-      <NavList>
-        <NavItem>
-          <Link to="/about">About</Link>
-        </NavItem>
-        <NavItem>
-          <Link to="/post">Post</Link>
-        </NavItem>
-      </NavList>
-    </NavWrapper>
-  );
-}
-
-const NavWrapper = styled.nav`
+export const Root = styled.nav`
   width: 100%;
   height: 84px;
   padding: 20px 45px;
@@ -36,25 +20,25 @@ const NavWrapper = styled.nav`
     `}
 `;
 
-const Logo = styled(Link)`
+export const Logo = styled(Link)`
   font-family: 'Blinker';
   font-size: 32px;
   font-weight: bold;
 `;
 
-const NavList = styled.ul`
+export const NavItems = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`;
 
-const NavItem = styled.li`
-  font-size: 16px;
-  margin: 0 20px;
+  & li {
+    font-size: 16px;
+    margin: 0 20px;
 
-  &:last-of-type {
-    margin-right: 0;
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 `;
 
-export default Navigation;
+export const NavItem = styled.li``;

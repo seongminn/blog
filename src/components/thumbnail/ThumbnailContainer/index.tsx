@@ -1,18 +1,18 @@
 import { useMemo } from 'react';
 
-import ThumbnailContainer from './ThumbnailContainer';
-import ThumbnailItem from './ThumbnailItem';
+import * as Styled from './style';
+import ThumbnailItem from '../ThumbnailItem';
 
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
-type ContentsType = {
+type ThumbnailProps = {
   posts: PostPageItemProps[];
   count: number;
   category: string;
 };
 
-function Contents({ posts, count, category }: ContentsType) {
+function ThumbnailContainer({ posts, count, category }: ThumbnailProps) {
   const refinedPosts = useMemo(
     () =>
       posts
@@ -26,12 +26,12 @@ function Contents({ posts, count, category }: ContentsType) {
   );
 
   return (
-    <ThumbnailContainer>
+    <Styled.Root>
       {refinedPosts.map(({ node }) => (
         <ThumbnailItem key={node.frontmatter.title} node={node} />
       ))}
-    </ThumbnailContainer>
+    </Styled.Root>
   );
 }
 
-export default Contents;
+export default ThumbnailContainer;

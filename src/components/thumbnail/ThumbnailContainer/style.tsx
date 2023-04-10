@@ -1,12 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { ReactNode } from 'react';
 
-function ThumbnailContainer({ children }: { children: ReactNode }) {
-  return <Container>{children}</Container>;
-}
-
-const Container = styled.section`
+export const Root = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,5 +15,3 @@ const Container = styled.section`
       max-width: ${theme.layouts.maxWidth};
     `}
 `;
-
-export default ThumbnailContainer;
