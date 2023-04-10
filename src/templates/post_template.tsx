@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 
 import SEO from '@/components/common/SEO';
 import PostContainer from '@/components/post';
-import CommentWidget from '@/components/post-fix/CommentWidget';
+import CommentWidget from '@/components/post/CommentWidget';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
