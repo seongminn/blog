@@ -25,16 +25,11 @@ function ThumbnailItem({ node }: { node: ThumbnailItemProps }) {
         style={{ isolation: 'isolate', borderRadius: '3px' }}
       />
       <ThumbnailInfo>
-        <div style={{ display: 'flex', marginBottom: '15px' }}>
+        <TagList style={{ display: 'flex', marginBottom: '15px' }}>
           {tags.map(tag => (
-            <span
-              key={title + tag}
-              style={{ fontSize: '15px', marginRight: '15px' }}
-            >
-              {tag}
-            </span>
+            <TagItem key={title + tag}>{tag}</TagItem>
           ))}
-        </div>
+        </TagList>
         <Title className="title">{title || slug}</Title>
         <Description
           className="description"
@@ -47,11 +42,17 @@ function ThumbnailItem({ node }: { node: ThumbnailItemProps }) {
 }
 
 const ThumbnailWrapper = styled(Link)`
+  position: relative;
   display: grid;
   grid-template-columns: 170px auto;
   align-items: center;
 
   margin-bottom: 120px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateX(10px);
+  }
 `;
 
 const ThumbnailInfo = styled.div`
@@ -101,6 +102,22 @@ const Time = styled.time`
     css`
       color: ${theme.colors.grey_400};
     `}
+`;
+
+const TagList = styled.ul`
+  display: flex;
+  margin-bottom: 15px;
+`;
+
+const TagItem = styled.li`
+  font-size: 15px;
+  margin-right: 15px;
+
+  ${({ theme }) => css`
+    background-image: ${theme.colors.primary_gradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  `}
 `;
 
 export default ThumbnailItem;
