@@ -9,7 +9,6 @@ type SeoProps = {
 };
 
 function SEO({ title, description, thumbnailSrc, siteUrl }: SeoProps) {
-  console.log(siteUrl);
   return (
     <Helmet>
       <title>{title}</title>

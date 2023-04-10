@@ -2,8 +2,8 @@ import { graphql } from 'gatsby';
 import { FunctionComponent } from 'react';
 
 import SEO from '@/components/common/SEO';
+import PostContainer from '@/components/post';
 import CommentWidget from '@/components/post/CommentWidget';
-import PostContent from '@/components/post/PostContent';
 import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
@@ -42,7 +42,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         thumbnailSrc={publicURL}
         siteUrl={href}
       />
-      <PostContent html={html} />
+      <PostContainer html={html} />
       <CommentWidget />
     </Layout>
   );

@@ -1,18 +1,12 @@
-import styled from '@emotion/styled';
-
-import Navigation from './Navigation';
+import * as Styled from './style';
+import Navigation from '../Navigation';
 
 function Header() {
   return (
-    <HeaderWrapper>
+    <Styled.Root>
       <Navigation />
-    </HeaderWrapper>
+    </Styled.Root>
   );
 }
 
 export default Header;
-
-const HeaderWrapper = styled.header`
-  position: relative;
-  max-width: 100vw;
-`;

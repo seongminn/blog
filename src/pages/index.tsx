@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { FunctionComponent } from 'react';
 
 import SEO from '@/components/common/SEO';
-import Contents from '@/components/common/Thumbnails';
+import ThumbnailContainer from '@/components/thumbnail/ThumbnailContainer';
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { INITIAL_COUNT } from '@/constants/initial';
 import Layout from '@/layouts';
@@ -47,7 +47,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         thumbnailSrc={publicURL}
         siteUrl={siteUrl}
       />
-      <Contents
+      <ThumbnailContainer
         posts={edges}
         category={CATEGORY_TYPE.ALL}
         count={INITIAL_COUNT}
