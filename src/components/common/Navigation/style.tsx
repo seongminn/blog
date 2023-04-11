@@ -2,9 +2,23 @@ import styled from '@emotion/styled';
 
 import { breakpoints } from '@/constants/media';
 
-export const Root = styled.nav`
+export const Root = styled.nav<{ isOpen: boolean }>`
   display: flex;
   align-items: center;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  order: 2;
+
+  @media (max-width: ${breakpoints.lg}) {
+    transition: all 0.5s ease-in-out;
+
+    display: ${props => (props.isOpen ? 'flex' : 'none')};
+    width: 100%;
+
+    order: 3;
+  }
 `;
 
 export const NavItems = styled.ul`
@@ -18,27 +32,17 @@ export const NavItems = styled.ul`
   }
 
   @media (max-width: ${breakpoints.lg}) {
-    display: none;
-  }
-`;
+    flex-direction: column;
+    align-items: flex-start;
 
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
+    margin-top: 20px;
 
-  & div {
-    margin-left: 20px;
+    & li {
+      margin: 10px 0;
+      padding-left: 20px;
 
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  & .icon__menu {
-    display: none;
-
-    @media (max-width: ${breakpoints.lg}) {
-      display: block;
+      /* TODO 추후, 해당 Link 주소에 위치할 경우에만 border left 띄워주기*/
+      border-left: 2px solid black;
     }
   }
 `;

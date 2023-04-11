@@ -1,11 +1,10 @@
 import { Link } from 'gatsby';
 
 import * as Styled from './style';
-import Icon from '../Icon';
 
-function Navigation() {
+function Navigation({ isOpen }: { isOpen: boolean }) {
   return (
-    <Styled.Root>
+    <Styled.Root isOpen={isOpen}>
       <Styled.NavItems>
         <li>
           <Link to="/about">About</Link>
@@ -14,10 +13,6 @@ function Navigation() {
           <Link to="/post">Post</Link>
         </li>
       </Styled.NavItems>
-      <Styled.IconContainer>
-        <Icon className="icon__search" iconName="search" color="black" />
-        <Icon className="icon__menu" iconName="menu" color="black" />
-      </Styled.IconContainer>
     </Styled.Root>
   );
 }
