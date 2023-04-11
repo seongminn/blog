@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
+import { breakpoints } from '@/constants/media';
+
 export const Root = styled.header`
   position: relative;
   width: 100%;
@@ -20,7 +22,7 @@ export const Root = styled.header`
       box-shadow: ${theme.colors.shadow};
     `}
 
-  @media (max-width: 550px) {
+  @media (max-width: ${breakpoints.sm}) {
     height: 60px;
   }
 `;
@@ -30,7 +32,7 @@ export const Logo = styled(Link)`
   font-size: 32px;
   font-weight: bold;
 
-  @media (max-width: 550px) {
+  @media (max-width: ${breakpoints.sm}) {
     font-size: 24px;
   }
 `;

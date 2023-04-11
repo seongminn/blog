@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
+import { breakpoints } from '@/constants/media';
+
 export const Root = styled(Link)`
   position: relative;
   display: grid;
@@ -15,11 +17,11 @@ export const Root = styled(Link)`
     transform: translateX(10px);
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: ${breakpoints.sm}) {
     margin-bottom: 60px;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: ${breakpoints.sm}) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -32,7 +34,7 @@ export const InfoContainer = styled.div`
   align-items: flex-start;
   margin-left: 50px;
 
-  @media (max-width: 550px) {
+  @media (max-width: ${breakpoints.sm}) {
     margin: 30px 0 0 0;
   }
 `;

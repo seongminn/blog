@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { breakpoints } from '@/constants/media';
+
 export const Root = styled.nav`
   display: flex;
   align-items: center;
@@ -15,7 +17,7 @@ export const NavItems = styled.ul`
     margin: 0 20px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${breakpoints.lg}) {
     display: none;
   }
 `;
@@ -35,7 +37,7 @@ export const IconContainer = styled.div`
   & .icon__menu {
     display: none;
 
-    @media (max-width: 900px) {
+    @media (max-width: ${breakpoints.lg}) {
       display: block;
     }
   }
