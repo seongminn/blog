@@ -22,6 +22,10 @@ export const Root = styled.header`
       box-shadow: ${theme.colors.shadow};
     `}
 
+  @media (max-width: ${breakpoints.lg}) {
+    height: 72px;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     height: 60px;
   }
@@ -31,6 +35,10 @@ export const Logo = styled(Link)`
   font-family: 'Blinker';
   font-size: 32px;
   font-weight: bold;
+
+  @media (max-width: ${breakpoints.lg}) {
+    font-size: 28px;
+  }
 
   @media (max-width: ${breakpoints.sm}) {
     font-size: 24px;
