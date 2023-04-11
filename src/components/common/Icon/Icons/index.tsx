@@ -1,8 +1,12 @@
 import Github from './Github';
-import Google from './Google';
-import Magnifier from './Magnifier';
+import Menu from './Menu';
+import Search from './Search';
 
-const iconName = { google: Google, github: Github, magnifier: Magnifier };
+const iconName = {
+  github: Github,
+  search: Search,
+  menu: Menu,
+};
 
 export type IconNames = keyof typeof iconName;
 
