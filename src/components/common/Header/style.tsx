@@ -6,7 +6,7 @@ export const Root = styled.header`
   position: relative;
   width: 100%;
   height: 84px;
-  padding: 20px 45px;
+  padding: 20px 30px;
 
   display: flex;
   justify-content: space-between;
@@ -19,6 +19,10 @@ export const Root = styled.header`
     css`
       box-shadow: ${theme.colors.shadow};
     `}
+
+  @media (max-width: 550px) {
+    height: 60px;
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -26,7 +30,7 @@ export const Logo = styled(Link)`
   font-size: 32px;
   font-weight: bold;
 
-  @media (max-width: 900px) {
+  @media (max-width: 550px) {
     font-size: 24px;
   }
 `;

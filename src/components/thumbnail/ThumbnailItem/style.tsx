@@ -9,10 +9,20 @@ export const Root = styled(Link)`
   align-items: center;
 
   margin-bottom: 120px;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: translateX(10px);
+  }
+
+  @media (max-width: 550px) {
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
@@ -21,6 +31,10 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 50px;
+
+  @media (max-width: 550px) {
+    margin: 30px 0 0 0;
+  }
 `;
 
 export const Title = styled.h3`

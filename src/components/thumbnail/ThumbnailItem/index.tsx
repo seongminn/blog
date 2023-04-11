@@ -24,7 +24,7 @@ function ThumbnailItem({ node }: { node: ThumbnailItemProps }) {
         style={{ isolation: 'isolate', borderRadius: '3px' }}
       />
       <Styled.InfoContainer>
-        <Styled.TagItems style={{ display: 'flex', marginBottom: '15px' }}>
+        <Styled.TagItems>
           {tags.map(tag => (
             <li key={title + tag}>{tag}</li>
           ))}

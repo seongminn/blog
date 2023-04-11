@@ -14,7 +14,10 @@ function Navigation() {
           <Link to="/post">Post</Link>
         </li>
       </Styled.NavItems>
-      <Icon iconName="magnifier" color="black" style={{ marginLeft: '20px' }} />
+      <Styled.IconContainer>
+        <Icon className="icon__search" iconName="search" color="black" />
+        <Icon className="icon__menu" iconName="menu" color="black" />
+      </Styled.IconContainer>
     </Styled.Root>
   );
 }
