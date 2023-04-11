@@ -18,13 +18,15 @@ export const Root = styled(Link)`
   }
 
   @media (max-width: ${breakpoints.sm}) {
-    margin-bottom: 60px;
-  }
-
-  @media (max-width: ${breakpoints.sm}) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    margin-bottom: 60px;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
   }
 `;
 
