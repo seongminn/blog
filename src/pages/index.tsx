@@ -5,7 +5,7 @@ import SEO from '@/components/common/SEO';
 import ThumbnailContainer from '@/components/thumbnail/ThumbnailContainer';
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { INITIAL_COUNT } from '@/constants/initial';
-import Layout from '@/layouts';
+import Layout from '@/components/common/Layout';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type IndexPageProps = {

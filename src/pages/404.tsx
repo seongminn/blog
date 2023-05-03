@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { FunctionComponent } from 'react';
 
-import Layout from '@/layouts';
+import Layout from '@/components/common/Layout';
 import GlobalStyle from '@/styles/GlobalStyle';
 
 const NotFoundPage: FunctionComponent = function () {
