@@ -4,49 +4,45 @@ import { Link } from 'gatsby';
 
 import { breakpoints } from '@/constants/media';
 
-export const Root = styled.header`
+export const Root = styled.header<{ isStart: boolean }>`
   position: fixed;
-  top: 0;
   width: 100%;
-  height: 84px;
-  padding: 20px 30px;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   z-index: 999;
   transition: all 0.25s ease-in-out;
 
-  ${({ theme }) =>
+  ${({ theme, isStart }) =>
     css`
       background-color: ${theme.colors.white};
-      box-shadow: ${theme.colors.shadow};
-    `}
+      box-shadow: ${isStart ? 'none' : theme.colors.shadow};
+      padding: ${isStart ? '30px 0' : '20px 0'};
+    `};
+`;
 
-  @media (max-width: ${breakpoints.lg}) {
-    min-height: 72px;
-    height: auto;
-  }
+export const Container = styled.div`
+  max-width: ${({ theme }) => theme.layouts.maxWidth};
+  width: 100%;
+  padding: 0 30px;
 
-  @media (max-width: ${breakpoints.sm}) {
-    min-height: 60px;
-    height: auto;
-  }
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Logo = styled(Link)`
-  flex-basis: 0;
-  flex-grow: 0;
-  flex-shrink: 0;
-
-  order: 0;
-
   font-family: 'Blinker';
   font-size: 32px;
   font-weight: bold;
+
+  ${({ theme }) => css`
+    background-image: ${theme.colors.primary_gradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  `}
 
   @media (max-width: ${breakpoints.lg}) {
     font-size: 28px;
@@ -57,25 +53,9 @@ export const Logo = styled(Link)`
   }
 `;
 
-export const Space = styled.div`
-  flex-basis: 0;
-  flex-grow: 50;
-  flex-shrink: 0;
-
-  width: 100%;
-  background-color: transparent;
-
-  order: 1;
-`;
-
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-
-  order: 3;
 
   & div {
     margin-left: 20px;
@@ -83,10 +63,6 @@ export const IconContainer = styled.div`
     &:last-of-type {
       margin-right: 0;
     }
-  }
-
-  @media (max-width: ${breakpoints.lg}) {
-    order: 2;
   }
 
   & .icon__menu {
