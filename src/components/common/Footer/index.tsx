@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { FunctionComponent } from 'react';
 
 import * as Styled from './style';
@@ -9,7 +10,9 @@ const Footer: FunctionComponent = function () {
     <Styled.Root>
       <Styled.Contact>
         <Icon iconName="rss" size="20" />
-        <Icon iconName="github" />
+        <Link to="https://github.com/seongminn">
+          <Icon iconName="github" />
+        </Link>
       </Styled.Contact>
       <p>
         Thank You for Visiting My Blog, Have a Good Day 🍀
