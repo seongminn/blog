@@ -23,8 +23,8 @@ const colors = {
 };
 
 const layouts = {
-  maxWidth: '900px',
-  headerHeight: '480px',
+  maxWidth: '1080px',
+  headerHeight: '80px',
 };
 
 const theme = {

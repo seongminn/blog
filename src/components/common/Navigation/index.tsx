@@ -1,7 +1,8 @@
 import { Link } from 'gatsby';
 
 import * as Styled from './style';
-import Icon from '../Icon';
+
+import Icon from '@/components/common/Icon';
 
 function Navigation() {
   return (
@@ -15,8 +16,18 @@ function Navigation() {
         </li>
       </Styled.NavItems>
       <Styled.IconContainer>
-        <Icon className="icon__search" iconName="search" color="black" />
-        <Icon className="icon__menu" iconName="menu" color="black" />
+        <Icon
+          className="icon__search"
+          iconName="search"
+          color="black"
+          aria-label="Search"
+        />
+        <Icon
+          className="icon__menu"
+          iconName="menu"
+          color="black"
+          aria-label="Menu"
+        />
       </Styled.IconContainer>
     </Styled.Root>
   );
