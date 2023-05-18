@@ -1,8 +1,10 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
 @font-face {
   font-family: 'Blinker';
   src: local('Blinker');
   src: url('/fonts/Blinker-Bold.woff2') format('woff2');
-  src: url('/fonts/Blinker-Bold.woff') format('woff');
+
   font-weight: normal;
   font-display: block;
 }
@@ -11,7 +13,7 @@
   font-family: 'Pretendard';
   src: local('Pretendard');
   src: url('/fonts/Pretendard-Regular.subset.woff2') format('woff2');
-  src: url('/fonts/Pretendard-Regular.subset.woff') format('woff');
+
   font-weight: normal;
   font-display: block;
 }
@@ -20,7 +22,7 @@
   font-family: 'Pretendard';
   src: local('Pretendard');
   src: url('/fonts/Pretendard-Bold.subset.woff2') format('woff2');
-  src: url('/fonts/Pretendard-Bold.subset.woff') format('woff');
+
   font-weight: bold;
   font-display: block;
 }

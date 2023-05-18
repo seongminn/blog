@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 import { FunctionComponent } from 'react';
 
+import BlogContainer from '@/components/blog';
+import CommentWidget from '@/components/blog/CommentWidget';
+import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
-import PostContainer from '@/components/post';
-import CommentWidget from '@/components/post/CommentWidget';
-import Layout from '@/layouts';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type PostTemplateProps = {
@@ -42,7 +42,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         thumbnailSrc={publicURL}
         siteUrl={href}
       />
-      <PostContainer html={html} />
+      <BlogContainer html={html} />
       <CommentWidget />
     </Layout>
   );
