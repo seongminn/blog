@@ -44,7 +44,7 @@ const defaultStyle = css`
     background-color: inherit;
   }
 
-  section[class*='-Blog'] {
+  section[class*='-DetailContainer'] {
     // Markdown Style
     line-height: 1.8;
     font-size: 16px;

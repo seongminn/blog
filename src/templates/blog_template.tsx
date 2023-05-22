@@ -1,8 +1,10 @@
 import { graphql } from 'gatsby';
 import { FunctionComponent } from 'react';
 
-import BlogContainer from '@/components/blog';
-import CommentWidget from '@/components/blog/CommentWidget';
+import CommentWidget from '@/components/blog/comment';
+import Detail from '@/components/blog/detail';
+import Image from '@/components/blog/header-img';
+import Title from '@/components/blog/header-title';
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
 import { PostPageItemProps } from '@/types/PostItem.types';
@@ -39,10 +41,13 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       <SEO
         title={title}
         description={summary}
-        thumbnailSrc={publicURL}
-        siteUrl={href}
+        thumbnail={publicURL}
+        url={href}
       />
-      <BlogContainer html={html} />
+      <Title>{title}</Title>
+      <p>{date}</p>
+      <Image src={publicURL} />
+      <Detail html={html} />
       <CommentWidget />
     </Layout>
   );
