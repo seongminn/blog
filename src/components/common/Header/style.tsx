@@ -5,9 +5,9 @@ import { Link } from 'gatsby';
 import { breakpoints } from '@/constants/media';
 
 export const Root = styled.header<{ isStart: boolean }>`
-  position: fixed;
   width: 100%;
 
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;

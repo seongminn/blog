@@ -34,9 +34,8 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 
-    padding-top: 84px;
+    padding: 120px 30px 0;
     margin: 0 auto;
 
     max-width: ${({ theme }) => theme.layouts.maxWidth};

@@ -4,11 +4,11 @@ import { Helmet } from 'react-helmet';
 type SeoProps = {
   title: string;
   description: string;
-  siteUrl: string;
-  thumbnailSrc: string;
+  url: string;
+  thumbnail: string;
 };
 
-function SEO({ title, description, thumbnailSrc, siteUrl }: SeoProps) {
+function SEO({ title, description, thumbnail: thumbnailSrc, url }: SeoProps) {
   return (
     <Helmet>
       <title>{title}</title>
@@ -21,7 +21,7 @@ function SEO({ title, description, thumbnailSrc, siteUrl }: SeoProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={thumbnailSrc} />
-      <meta property="og:url" content={siteUrl} />
+      <meta property="og:url" content={url} />
       <meta property="og:site_name" content={title} />
 
       <meta name="twitter:card" content="summary" />
