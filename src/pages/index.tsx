@@ -9,7 +9,7 @@ import { CATEGORY_TYPE } from '@/constants/enum';
 import { INITIAL_COUNT } from '@/constants/initial';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
-type IndexPageProps = {
+type MainPageProps = {
   location: {
     search: string;
   };
@@ -30,7 +30,7 @@ type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
+const MainPage: FunctionComponent<MainPageProps> = function ({
   // location: { search },
   data: {
     site: {
@@ -45,8 +45,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       <SEO
         title={title}
         description={description}
-        thumbnailSrc={publicURL}
-        siteUrl={siteUrl}
+        thumbnail={publicURL}
+        url={siteUrl}
       />
 
       <Styled.Root>
@@ -62,7 +62,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 };
 
-export default IndexPage;
+export default MainPage;
 
 export const getPostList = graphql`
   query getPostList {
@@ -105,8 +105,8 @@ export const getPostList = graphql`
 
 const Styled = {
   Root: styled.section`
-    margin: 0 auto;
-    padding: 80px 30px 0;
+    width: 100%;
+    padding-top: 80px;
   `,
   Title: styled.h1`
     font-size: 1.2rem;

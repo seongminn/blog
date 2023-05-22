@@ -1,11 +1,13 @@
 ---
 date: '2020-07-29'
-title: 'Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test'
+title: '1왜 TypeScript는 void 타입을 사용해도 값을 return 할 수 있을까?'
 category: 'Web'
 summary: '홈페이지를 운영하는 많은 사람들 또는 기업들이 검색 페이지 최상단에 보여지게 하기 위해 어떤 최적화 작업을 하는지 알아보자. 홈페이지를 운영하는 많은 사람들 또는 기업들이 검색 페이지 최상단에 보여지게 하기 위해 어떤 최적화 작업을 하는지 알아보자. 홈페이지를 운영하는 많은 사람들 또는 기업들이 검색 페이지 최상단에 보여지게 하기 위해 어떤 최적화 작업을 하는지 알아보자.'
 thumbnail: './test.png'
 tags: ['# Web', '# React', '# Vite']
 ---
+
+## 태그
 
 ### 1. Help Google Bot to Find My Contents
 
@@ -18,6 +20,25 @@ SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관
 Robots.txt 파일은 검색 엔진에 어떤 페이지를 크롤링해도 되는지 알리는 파일로, 서버의 루트 디렉토리에 있어야 한다.
 
 과도한 Robots.txt 파일은 더 많은 방문자를 유도할 수 있는 정상적인 검색 엔진 크롤러의 접근을 막을 가능성이 있기 때문에 적절하게 설정해야 한다.
+
+=>
+
+```js
+// dsafsadf
+
+const foo = () => {
+  let a = 1;
+  let b = 2;
+
+  return a + b;
+
+  const res = foo();
+  console.log(res);
+};
+```
+
+<strong>볼드체</strong>는 어떻게 될까?
+볼드체는 어떻게 될까?
 
 ---
 
