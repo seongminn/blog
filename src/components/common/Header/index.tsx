@@ -23,7 +23,7 @@ function Header() {
   useEffect(() => {
     window.addEventListener('scroll', throttled, { passive: true });
     return () => {
-      window.addEventListener('scroll', throttled, { passive: true });
+      window.removeEventListener('scroll', throttled);
     };
   }, [scroll]);
 
