@@ -1,6 +1,5 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-
-import { breakpoints } from '@/constants/media';
 
 export const Root = styled.nav`
   display: flex;
@@ -8,18 +7,20 @@ export const Root = styled.nav`
 `;
 
 export const NavItems = styled.ul`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: none;
 
-  & li {
-    font-size: 16px;
-    margin: 0 20px;
-  }
+  ${({ theme }) => css`
+    ${theme.mq.mobile} {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
 
-  @media (max-width: ${breakpoints.lg}) {
-    display: none;
-  }
+      & li {
+        font-size: 16px;
+        margin: 0 20px;
+      }
+    }
+  `}
 `;
 
 export const IconContainer = styled.div`
@@ -35,10 +36,12 @@ export const IconContainer = styled.div`
   }
 
   & .icon__menu {
-    display: none;
+    display: block;
 
-    @media (max-width: ${breakpoints.lg}) {
-      display: block;
-    }
+    ${({ theme }) => css`
+      ${theme.mq.tablet} {
+        display: none;
+      }
+    `}
   }
 `;

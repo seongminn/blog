@@ -2,8 +2,6 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { breakpoints } from '@/constants/media';
-
 export const Root = styled.header<{ isHide: boolean }>`
   width: 100%;
   height: 65px;
@@ -50,13 +48,11 @@ export const Logo = styled(Link)`
     -webkit-text-fill-color: transparent;
   `}
 
-  @media (max-width: ${breakpoints.lg}) {
-    font-size: 28px;
-  }
-
-  @media (max-width: ${breakpoints.sm}) {
-    font-size: 24px;
-  }
+  ${({ theme }) => css`
+    ${theme.mq.mobile} {
+      font-size: 24px;
+    }
+  `}
 `;
 
 export const IconContainer = styled.div`
@@ -73,9 +69,5 @@ export const IconContainer = styled.div`
 
   & .icon__menu {
     display: none;
-
-    @media (max-width: ${breakpoints.lg}) {
-      display: block;
-    }
   }
 `;
