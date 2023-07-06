@@ -2,8 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 
-import Body from './body';
-import Head from './head';
+import Body from './Body';
+import Head from './Head';
 
 const Blog = (props: PropsWithChildren) => {
   return <Wrapper>{props.children}</Wrapper>;

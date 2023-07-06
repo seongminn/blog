@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { useRef } from 'react';
 
 import Blog from '@/components/blog';
-import TOC from '@/components/blog/toc';
+import TOC from '@/components/blog/TOC';
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
 import useItemHeight from '@/hooks/useHeight';
