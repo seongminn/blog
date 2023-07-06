@@ -11,7 +11,6 @@ interface TOCProps {
 
 const TOC = (props: TOCProps) => {
   const { headings, activeHeadingId } = useObserver();
-  console.log(headings, activeHeadingId);
 
   const parser: { [key: string]: number } = {
     H1: 10,
