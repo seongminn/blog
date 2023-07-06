@@ -1,15 +1,15 @@
-import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import { FunctionComponent } from 'react';
 
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
-import PostList from '@/components/post-list/PostList';
+import PostList from '@/components/main/PostList';
+import SectionTitle from '@/components/main/Title';
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { INITIAL_COUNT } from '@/constants/initial';
+import { MAIN_TITLE } from '@/constants/meta';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
-type IndexPageProps = {
+type MainPageProps = {
   location: {
     search: string;
   };
@@ -30,45 +30,38 @@ type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
-  // location: { search },
-  data: {
-    site: {
-      siteMetadata: { title, description, siteUrl },
-    },
-    allMarkdownRemark: { edges },
-    file: { publicURL },
-  },
-}) {
+const MainPage = (props: MainPageProps) => {
+  const { site, allMarkdownRemark, file } = props.data;
+  const { description, siteUrl } = site.siteMetadata;
+  const posts = allMarkdownRemark.edges;
+  const { publicURL } = file;
+
   return (
     <Layout>
       <SEO
-        title={title}
+        title={MAIN_TITLE}
         description={description}
-        thumbnailSrc={publicURL}
-        siteUrl={siteUrl}
+        thumbnail={publicURL}
+        url={siteUrl}
       />
 
-      <Styled.Root>
-        <Styled.Title>새로운 게시물을 확인해보세요 ✨</Styled.Title>
+      <SectionTitle>새로운 게시물을 확인해보세요 ✨</SectionTitle>
 
-        <PostList
-          posts={edges}
-          category={CATEGORY_TYPE.ALL}
-          count={INITIAL_COUNT}
-        />
-      </Styled.Root>
+      <PostList
+        posts={posts}
+        category={CATEGORY_TYPE.ALL}
+        count={INITIAL_COUNT}
+      />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default MainPage;
 
 export const getPostList = graphql`
   query getPostList {
     site {
       siteMetadata {
-        title
         description
         siteUrl
       }
@@ -102,26 +95,3 @@ export const getPostList = graphql`
     }
   }
 `;
-
-const Styled = {
-  Root: styled.section`
-    margin: 0 auto;
-    padding: 80px 30px 0;
-  `,
-  Title: styled.h1`
-    font-size: 1.2rem;
-    font-weight: 600;
-    line-height: 28px;
-    margin-bottom: 50px;
-
-    color: ${({ theme }) => theme.colors.grey_200};
-  `,
-  Separator: styled.hr`
-    height: 2px;
-    width: 85px;
-    margin: 0 0 60px 0;
-
-    background-color: ${({ theme }) => theme.colors.light_grey_100};
-    border: 0;
-  `,
-};

@@ -2,31 +2,35 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { breakpoints } from '@/constants/media';
-
-export const Root = styled.header<{ isStart: boolean }>`
-  position: fixed;
+export const Root = styled.header<{ isHide: boolean }>`
   width: 100%;
+  height: 65px;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
 
   z-index: 999;
-  transition: all 0.25s ease-in-out;
+  transform: translateY(0%);
+  transition: transform 0.3s;
 
-  ${({ theme, isStart }) =>
+  ${({ theme, isHide: isHide }) =>
     css`
+      transform: ${isHide && 'translateY(-100%)'};
       background-color: ${theme.colors.white};
-      box-shadow: ${isStart ? 'none' : theme.colors.shadow};
-      padding: ${isStart ? '30px 0' : '20px 0'};
+      box-shadow: ${theme.colors.shadow};
     `};
 `;
 
 export const Container = styled.div`
   max-width: ${({ theme }) => theme.layouts.maxWidth};
   width: 100%;
+  margin: 0 auto;
   padding: 0 30px;
 
   display: flex;
@@ -35,7 +39,7 @@ export const Container = styled.div`
 
 export const Logo = styled(Link)`
   font-family: 'Blinker';
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
 
   ${({ theme }) => css`
@@ -43,14 +47,6 @@ export const Logo = styled(Link)`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   `}
-
-  @media (max-width: ${breakpoints.lg}) {
-    font-size: 28px;
-  }
-
-  @media (max-width: ${breakpoints.sm}) {
-    font-size: 24px;
-  }
 `;
 
 export const IconContainer = styled.div`
@@ -67,9 +63,5 @@ export const IconContainer = styled.div`
 
   & .icon__menu {
     display: none;
-
-    @media (max-width: ${breakpoints.lg}) {
-      display: block;
-    }
   }
 `;

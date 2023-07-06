@@ -22,3 +22,13 @@ export type PostPageItemProps = {
     frontmatter: PostFrontmatterType;
   };
 };
+
+export type SEOType = {
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      author: string;
+    };
+  };
+};

@@ -73,20 +73,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Import Post Template Component
-  const PostTemplateComponent = path.resolve(
+  const BlogTemplateComponent = path.resolve(
     __dirname,
-    './src/templates/post_template.tsx',
+    './src/templates/blog_template.tsx',
   );
 
   // Page Generating Function
-  const generatePostPage = ({
+  const generateBlogPage = ({
     node: {
       fields: { slug },
     },
   }) => {
     const pageOptions = {
       path: slug,
-      component: PostTemplateComponent,
+      component: BlogTemplateComponent,
       context: { slug },
     };
 
@@ -94,7 +94,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   };
 
   // Generate Post Page And Passing Slug Props for Query
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
+  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generateBlogPage);
 };
 // createPage({
 //   path: "/using-dsg",
