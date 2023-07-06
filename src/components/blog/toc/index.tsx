@@ -11,6 +11,7 @@ interface TOCProps {
 
 const TOC = (props: TOCProps) => {
   const { headings, activeHeadingId } = useObserver();
+  console.log(headings, activeHeadingId);
 
   const parser: { [key: string]: number } = {
     H1: 10,
@@ -23,6 +24,7 @@ const TOC = (props: TOCProps) => {
     const node = document.getElementById(itemId);
 
     if (!node) return;
+    if (typeof window === 'undefined') return;
 
     const rect = node.getBoundingClientRect();
     const scrollTop = window.scrollY;

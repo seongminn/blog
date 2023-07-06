@@ -107,7 +107,7 @@ const defaultStyle = css`
     }
   }
 
-  div[class*='-Detail'] {
+  div.post {
     // Markdown Style
     line-height: 1.8;
     font-size: 16px;
@@ -120,22 +120,30 @@ const defaultStyle = css`
       margin: 0 0 1.7em;
     }
 
+    strong {
+      display: contents;
+      font-weight: 600;
+    }
+
     // Adjust Heading Element Style
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       font-weight: 600;
     }
 
     * + h1,
     * + h2,
-    * + h3 {
+    * + h3,
+    * + h4 {
       padding: 40px 0 16px;
     }
 
     hr + h1,
     hr + h2,
-    hr + h3 {
+    hr + h3,
+    hr + h4 {
       margin-top: 0;
     }
 
@@ -151,19 +159,41 @@ const defaultStyle = css`
       font-size: 20px;
     }
 
+    h4 {
+      font-size: 18px;
+    }
+
     // Adjust Quotation Element Style
     blockquote {
+      background-color: ${theme.colors.white};
+      border: 1px solid ${theme.colors.light_grey_100};
+      border-radius: 5px;
+
       margin: 30px 0 1.7rem;
-      padding: 5px 15px;
-      border-left: 2px solid #000000;
-      font-weight: 800;
+      padding: 1rem 1.5rem;
+
+      font-weight: 500;
     }
 
     // Adjust List Element Style
     ol,
     ul {
+      list-style: disc;
       margin-left: 20px;
-      padding: 30px 0;
+      padding: 0 0 30px;
+
+      li {
+        list-style: disc;
+
+        &::marker {
+          unicode-bidi: isolate;
+          font-variant-numeric: tabular-nums;
+          text-transform: none;
+          text-indent: 0px !important;
+          text-align: start !important;
+          text-align-last: start !important;
+        }
+      }
     }
 
     // Adjust Link Element Style

@@ -69,7 +69,8 @@ export const prism = css`
     overflow: auto;
   }
 
-  p > code[class*='language-'] {
+  p > code[class*='language-'],
+  li > code[class*='language-'] {
     color: ${theme.colors.primary_darker};
     background-color: ${theme.colors.primary_24};
     padding: 0.2rem 0.4rem;
