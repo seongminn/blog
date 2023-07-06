@@ -2,8 +2,8 @@ import { graphql } from 'gatsby';
 
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
-import PostList from '@/components/main/post-list';
-import SectionTitle from '@/components/main/title';
+import PostList from '@/components/main/PostList';
+import SectionTitle from '@/components/main/Title';
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { INITIAL_COUNT } from '@/constants/initial';
 import { MAIN_TITLE } from '@/constants/meta';

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import * as Styled from './style';
 
-import PostItem from '@/components/post-list/PostItem';
+import PostItem from '@/components/main/PostItem';
 import { CATEGORY_TYPE } from '@/constants/enum';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
