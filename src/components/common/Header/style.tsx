@@ -39,19 +39,13 @@ export const Container = styled.div`
 
 export const Logo = styled(Link)`
   font-family: 'Blinker';
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
 
   ${({ theme }) => css`
     background-image: ${theme.colors.primary_gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  `}
-
-  ${({ theme }) => css`
-    ${theme.mq.mobile} {
-      font-size: 24px;
-    }
   `}
 `;
 

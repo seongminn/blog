@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
-import styled from '@emotion/styled';
 import { ReactNode } from 'react';
+
+import * as Styled from './style';
 
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
@@ -25,20 +26,3 @@ function Layout({ children }: LayoutProps) {
 }
 
 export default Layout;
-
-const Styled = {
-  Root: styled.div`
-    width: 100%;
-  `,
-  Container: styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 120px 30px 0;
-    margin: 0 auto;
-
-    max-width: ${({ theme }) => theme.layouts.maxWidth};
-    min-width: 300px;
-  `,
-};

@@ -2,6 +2,7 @@ import { Global, css } from '@emotion/react';
 import { FunctionComponent } from 'react';
 
 import { prism } from './prism';
+import theme from './theme';
 
 const defaultStyle = css`
   html,
@@ -17,11 +18,31 @@ const defaultStyle = css`
     font: inherit;
     color: inherit;
     flex-shrink: 0;
+
+    scroll-behavior: smooth;
+
+    &::-moz-selection {
+      background: ${theme.colors.primary};
+      color: #fff;
+    }
+    &::selection {
+      background: ${theme.colors.primary};
+      color: #fff;
+    }
   }
 
   body {
-    font-family: 'Pretendard';
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+      Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+      'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', sans-serif;
     letter-spacing: -0.03px;
+
+    -webkit-text-size-adjust: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
   }
 
   a {
@@ -44,7 +65,49 @@ const defaultStyle = css`
     background-color: inherit;
   }
 
-  section[class*='-DetailContainer'] {
+  hr {
+    width: 100%;
+    background-color: black;
+    margin: 3rem auto 4rem;
+    border: 0;
+
+    overflow: visible;
+    border: 0;
+
+    background-color: ${theme.colors.primary_48};
+    display: block;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+
+    position: relative;
+
+    &:before {
+      content: '';
+      background-color: ${theme.colors.primary_48};
+      display: block;
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      position: absolute;
+      left: -2em;
+      /* animation: dot-move-left 1s ease-out forwards; */
+    }
+
+    &:after {
+      content: '';
+      background-color: ${theme.colors.primary_48};
+      display: block;
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      position: absolute;
+      left: 2em;
+      /* animation: dot-move-right 1s ease-out forwards; */
+    }
+  }
+
+  div[class*='-Detail'] {
     // Markdown Style
     line-height: 1.8;
     font-size: 16px;
@@ -53,20 +116,21 @@ const defaultStyle = css`
     // Apply Padding Attribute to All Elements
     p {
       padding: 3px 0;
+      line-height: 2;
+      margin: 0 0 1.7em;
     }
 
     // Adjust Heading Element Style
     h1,
     h2,
     h3 {
-      font-weight: 800;
-      margin-bottom: 30px;
+      font-weight: 600;
     }
 
     * + h1,
     * + h2,
     * + h3 {
-      margin-top: 80px;
+      padding: 40px 0 16px;
     }
 
     hr + h1,
@@ -89,7 +153,7 @@ const defaultStyle = css`
 
     // Adjust Quotation Element Style
     blockquote {
-      margin: 30px 0;
+      margin: 30px 0 1.7rem;
       padding: 5px 15px;
       border-left: 2px solid #000000;
       font-weight: 800;
@@ -102,16 +166,11 @@ const defaultStyle = css`
       padding: 30px 0;
     }
 
-    // Adjust Horizontal Rule style
-    hr {
-      border: 1px solid #000000;
-      margin: 100px 0;
-    }
-
     // Adjust Link Element Style
     a {
-      color: #4263eb;
-      text-decoration: underline;
+      color: ${theme.colors.primary_darker};
+      text-decoration: underline dashed;
+      text-underline-offset: 0.45em;
     }
 
     // Adjust Code Style

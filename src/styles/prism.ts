@@ -1,10 +1,18 @@
 import { css } from '@emotion/react';
 
+import theme from './theme';
+
 export const prism = css`
+  /* @import url('https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css'); */
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
   code[class*='language-'],
   pre[class*='language-'] {
     color: #d6deeb;
-    font-family: 'Fira Code';
+    background-color: transparent;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
+      monospace;
+    font-variant-ligatures: normal;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -13,9 +21,12 @@ export const prism = css`
     line-height: 1.5;
     font-size: 14px;
 
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+
+    font-feature-settings: 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06',
+      'zero', 'onum';
 
     -webkit-hyphens: none;
     -moz-hyphens: none;
@@ -23,6 +34,11 @@ export const prism = css`
     hyphens: none;
 
     border-radius: 4px;
+  }
+
+  .token.operator {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
+      monospace;
   }
 
   pre[class*='language-']::-moz-selection,
@@ -49,8 +65,14 @@ export const prism = css`
 
   pre[class*='language-'] {
     padding: 1em;
-    margin: 0.5em 0;
+    margin: 0.5em 0 1.7rem;
     overflow: auto;
+  }
+
+  p > code[class*='language-'] {
+    color: ${theme.colors.primary_darker};
+    background-color: ${theme.colors.primary_24};
+    padding: 0.2rem 0.4rem;
   }
 
   :not(pre) > code[class*='language-'],
@@ -155,22 +177,36 @@ export const prism = css`
     font-style: italic;
   }
   // Markdown Responsive Design
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 80px 20px;
-    line-height: 1.6;
-    font-size: 14px;
 
+  ${theme.mq.tablet} {
     h1 {
-      font-size: 23px;
+      font-size: 22px;
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 19px;
     }
 
     h3 {
-      font-size: 17px;
+      font-size: 16px;
+    }
+  }
+
+  /* @media (max-width: 768px) {
+    width: 100%;
+    line-height: 1.4;
+    font-size: 14px;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h2 {
+      font-size: 19px;
+    }
+
+    h3 {
+      font-size: 16px;
     }
 
     img {
@@ -180,7 +216,7 @@ export const prism = css`
     hr {
       margin: 50px 0;
     }
-  }
+  } */
 `;
 
 // export const prism = css`
