@@ -1,12 +1,11 @@
 import { graphql } from 'gatsby';
-import { FunctionComponent } from 'react';
+import { useRef } from 'react';
 
-import CommentWidget from '@/components/blog/comment';
-import Detail from '@/components/blog/detail';
-import Image from '@/components/blog/header-img';
-import Title from '@/components/blog/header-title';
+import Blog from '@/components/blog';
+import TOC from '@/components/blog/toc';
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
+import useItemHeight from '@/hooks/useHeight';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
 type PostTemplateProps = {
@@ -18,24 +17,16 @@ type PostTemplateProps = {
   };
 };
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
-  location: { href },
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) {
-  const {
-    node: {
-      html,
-      frontmatter: {
-        title,
-        summary,
-        date,
-        category,
-        thumbnail: { publicURL },
-      },
-    },
-  } = edges[0];
+const PostTemplate = (props: PostTemplateProps) => {
+  const { data, location } = props;
+  const { href } = location;
+  const { html, frontmatter } = data.allMarkdownRemark.edges[0].node;
+  const { category, date, summary, title, thumbnail, tags } = frontmatter;
+  const { publicURL } = thumbnail;
+
+  const divRef = useRef<HTMLDivElement>(null);
+  const height = useItemHeight(divRef);
+
   return (
     <Layout>
       <SEO
@@ -44,11 +35,19 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         thumbnail={publicURL}
         url={href}
       />
-      <Title>{title}</Title>
-      <p>{date}</p>
-      <Image src={publicURL} />
-      <Detail html={html} />
-      <CommentWidget />
+      <Blog>
+        <Blog.Head
+          title={title}
+          category={category}
+          date={date}
+          publicURL={publicURL}
+          divRef={divRef}
+        />
+
+        <Blog.Body html={html} tags={tags} />
+
+        <TOC height={height} />
+      </Blog>
     </Layout>
   );
 };
@@ -66,6 +65,7 @@ export const queryMarkdownDataBySlug = graphql`
             summary
             date(formatString: "YYYY.MM.DD.")
             category
+            tags
             thumbnail {
               publicURL
             }

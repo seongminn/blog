@@ -1,69 +1,56 @@
-import styled from '@emotion/styled';
+import { useCallback } from 'react';
+import { animateScroll } from 'react-scroll';
+
+import * as Styled from './style';
+
+import { useObserver } from '@/hooks/useObserver';
 
 interface TOCProps {
-  contents: string | TrustedHTML;
+  height: number;
 }
 
 const TOC = (props: TOCProps) => {
-  const { contents } = props;
+  const { headings, activeHeadingId } = useObserver();
 
-  return <Styled.Contents dangerouslySetInnerHTML={{ __html: contents }} />;
+  const parser: { [key: string]: number } = {
+    H1: 10,
+    H2: 20,
+    H3: 30,
+    H4: 40,
+  };
+
+  const handleClickHeading = useCallback((itemId: string) => {
+    const node = document.getElementById(itemId);
+
+    if (!node) return;
+
+    const rect = node.getBoundingClientRect();
+    const scrollTop = window.scrollY;
+
+    animateScroll.scrollTo(rect.top + scrollTop - 65, {
+      duration: 0,
+      smooth: true,
+    });
+  }, []);
+
+  return (
+    <Styled.SideBar height={props.height}>
+      <Styled.TocNav>
+        <ul>
+          {headings.map(heading => (
+            <Styled.TocList
+              key={heading.id}
+              className={heading.id === activeHeadingId ? 'toc-active' : ''}
+              onClick={() => handleClickHeading(heading.id)}
+              parsedMargin={parser[heading.nodeName]}
+            >
+              {heading.innerText}
+            </Styled.TocList>
+          ))}
+        </ul>
+      </Styled.TocNav>
+    </Styled.SideBar>
+  );
 };
 
 export default TOC;
-
-const Styled = {
-  Contents: styled.nav`
-    position: sticky;
-    top: 100px;
-
-    ul,
-    li,
-    p,
-    a {
-      display: block;
-    }
-
-    & ul ul {
-      margin-left: 10px;
-    }
-
-    & ul > li > p,
-    & ul > li > a {
-      position: relative;
-      display: block;
-      font-size: 15px;
-      padding-left: 10px;
-      line-height: 30px;
-      color: ${({ theme }) => theme.colors.grey_100};
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 30ms ease-in-out;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.black};
-      }
-
-      &.isActive {
-        color: ${({ theme }) => theme.colors.black};
-
-        border-left: 20px solid;
-        border-image: ${({ theme }) => theme.colors.primary_gradient};
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 0;
-          display: block;
-          width: 2px;
-          height: 50%;
-          background: ${({ theme }) => theme.colors.primary_gradient};
-          transform: translateY(-50%);
-        }
-      }
-    }
-  `,
-};

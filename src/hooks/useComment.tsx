@@ -1,8 +1,4 @@
-import styled from '@emotion/styled';
-import { createRef, FunctionComponent, useEffect } from 'react';
-
-const src = 'https://utteranc.es/client.js';
-const repo = 'seongminn/playground'; // 자신 계정의 레포지토리로 설정
+import { createRef, useEffect } from 'react';
 
 type UtterancesAttributesType = {
   src: string;
@@ -14,7 +10,10 @@ type UtterancesAttributesType = {
   async: string;
 };
 
-const CommentWidget: FunctionComponent = function () {
+const src = 'https://utteranc.es/client.js';
+const repo = 'seongminn/playground'; // 자신 계정의 레포지토리로 설정
+
+const useComment = () => {
   const element = createRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -38,16 +37,7 @@ const CommentWidget: FunctionComponent = function () {
     element.current.appendChild(utterances);
   }, []);
 
-  return <UtterancesWrapper ref={element} />;
+  return { commentRef: element };
 };
 
-export default CommentWidget;
-
-const UtterancesWrapper = styled.div`
-  margin: 0 0 100px 0;
-
-  @media (max-width: 768px) {
-    padding: 0 20px;
-    margin: 0;
-  }
-`;
+export default useComment;
