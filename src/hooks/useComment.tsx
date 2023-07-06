@@ -11,7 +11,7 @@ type UtterancesAttributesType = {
 };
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'seongminn/playground'; // 자신 계정의 레포지토리로 설정
+const repo = 'seongminn/blog'; // 자신 계정의 레포지토리로 설정
 
 const useComment = () => {
   const element = createRef<HTMLDivElement>();
@@ -24,7 +24,7 @@ const useComment = () => {
       src,
       repo,
       'issue-term': 'pathname',
-      label: 'Comment',
+      label: 'comment 💌',
       theme: `github-light`,
       crossorigin: 'anonymous',
       async: 'true',
