@@ -6,10 +6,8 @@ import Gnb from '../Gnb';
 import { throttle } from '@/utils/throttle';
 
 function Header() {
-  if (typeof window === 'undefined') return;
-
   const [isHide, setIsHide] = useState(false);
-  const [scroll, setScroll] = useState(window.scrollY);
+  const [scroll, setScroll] = useState(0);
 
   const onScroll = () => {
     const pageYoffset = window.scrollY;
@@ -21,6 +19,10 @@ function Header() {
   };
 
   const throttled = useMemo(() => throttle(onScroll, 250), [scroll]);
+
+  useEffect(() => {
+    setScroll(window.scrollY);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', throttled, { passive: true });

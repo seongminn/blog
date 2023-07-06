@@ -2,7 +2,7 @@
 import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import { SEOType } from '@/types/PostItem.types';
+import { SEOType } from '@/types/SEO.types';
 
 type SeoProps = {
   title: string;
