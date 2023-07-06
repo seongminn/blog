@@ -112,13 +112,13 @@ class Juicer {
 - `<?>` : 모든 타입 가능 / `<T extends Object>`와 동일
 
 > 와일드 카드와 `Comparator`
-
-```java
-static <T> void sort(List<T> list, Comparator<? super T> c)
-```
-
-해당 제네릭 메서드에서 첫 번째 매개변수는 정렬할 대상을, 두 번째 매개변수는 정렬할 방법이 정의된 `Comparator`를 가리킨다. 이 때, `List<Apple>`을 정렬하기 위해서는 `Comparator<Apple>`이, `List<Grape>`를 정렬하기 위해선 `Comparator<Grape>`가 필요하다. `Fruit`의 자손이 생길 때마다 같은 타입의 `Comparator`를 계속해서 생성해줘야 한다.
-이런 경우에는 `Comparator<? super T>`처럼 선언하여 조상 타입의 `Comparator`도 지정할 수 있다.
+>
+> ```java
+> static <T> void sort(List<T> list, Comparator<? super T> c)
+> ```
+>
+> 해당 제네릭 메서드에서 첫 번째 매개변수는 정렬할 대상을, 두 번째 매개변수는 정렬할 >방법이 정의된 `Comparator`를 가리킨다. 이 때, `List<Apple>`을 정렬하기 위해서는 `Comparator<Apple>`이, `List<Grape>`를 정렬하기 위해선 `Comparator<Grape>`가 필요하다. `Fruit`의 자손이 생길 때마다 같은 타입의 `Comparator`를 계속해서 생성해줘야 한다.
+> 이런 경우에는 `Comparator<? super T>`처럼 선언하여 조상 타입의 `Comparator`도 지정할 수 있다.
 
 <br />
 
@@ -318,13 +318,13 @@ public void method() {
 @Test(testTools = {"JUnit", "AutoTester"})
 ```
 
-**java.lang.annotation.Annotation**
+<h4>java.lang.annotation.Annotation</h4>
 모든 애너테이션의 조상은 `Annotation`이기 때문에 모든 애너테이션 객체에 대해 `equals()`, `hashCode()`, `toString()`과 같은 메서드를 호출하는 것이 가능하다.
 
-**Marker Annotation**
-`Serializable`이나 `Cloneable` 인터페이스처럼 요소가 하나도 정의되지 않은 애너테이션을 **마커 애너테이션**이라고 한다.
+<h4>Marker Annotation</h4>
+`Serializable`이나 `Cloneable` 인터페이스처럼 요소가 하나도 정의되지 않은 애너테이션을 <strong>마커 애너테이션</strong>이라고 한다.
 
-**애너테이션 요소의 규칙**
+<h4>애너테이션 요소의 규칙</h4>
 
 - 요소의 타입은 기본형, String, enum, 애너테이션, Class만 허용된다.
 - 매개변수를 선언할 수 없다.
