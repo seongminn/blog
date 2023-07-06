@@ -111,7 +111,7 @@ class Juicer {
 - `<? super T>` : T와 그 조상들
 - `<?>` : 모든 타입 가능 / `<T extends Object>`와 동일
 
-> 와일드 카드와 `Comparator`<br/>
+> 와일드 카드와 `Comparator`
 
 ```java
 static <T> void sort(List<T> list, Comparator<? super T> c)
@@ -148,11 +148,9 @@ class Box<T extends Fruit> {
     	...
 	}
 }
-```
 
     			↓
 
-```java
 class Box {
 	void add(Fruit t) {
 		...

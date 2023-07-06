@@ -162,8 +162,22 @@ const defaultStyle = css`
     // Adjust List Element Style
     ol,
     ul {
+      list-style: disc;
       margin-left: 20px;
       padding: 30px 0;
+
+      li {
+        list-style: disc;
+
+        &::marker {
+          unicode-bidi: isolate;
+          font-variant-numeric: tabular-nums;
+          text-transform: none;
+          text-indent: 0px !important;
+          text-align: start !important;
+          text-align-last: start !important;
+        }
+      }
     }
 
     // Adjust Link Element Style
