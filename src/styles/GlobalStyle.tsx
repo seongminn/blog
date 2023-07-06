@@ -107,7 +107,7 @@ const defaultStyle = css`
     }
   }
 
-  div[class*='-Detail'] {
+  div.post {
     // Markdown Style
     line-height: 1.8;
     font-size: 16px;
