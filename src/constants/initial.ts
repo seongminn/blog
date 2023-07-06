@@ -1,1 +1,1 @@
-export const INITIAL_COUNT = 5;
+export const INITIAL_COUNT = 8;
