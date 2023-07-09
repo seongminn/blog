@@ -1,7 +1,18 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  padding-right: 40px;
+  padding: 0;
+
+  ${({ theme }) => css`
+    ${theme.mq.mobile} {
+      padding-right: 20px;
+    }
+
+    ${theme.mq.desktop} {
+      padding-right: 40px;
+    }
+  `}
 `;
 
 export const Detail = styled.div`
