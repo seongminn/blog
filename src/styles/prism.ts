@@ -3,9 +3,6 @@ import { css } from '@emotion/react';
 import theme from './theme';
 
 export const prism = css`
-  /* @import url('https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css'); */
-  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
-
   code[class*='language-'],
   pre[class*='language-'] {
     color: #d6deeb;
