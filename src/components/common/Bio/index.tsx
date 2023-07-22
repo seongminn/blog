@@ -18,13 +18,13 @@ const Bio = () => {
         <Styled.Name>{author}</Styled.Name>
         <Styled.Introduction>{introduction}</Styled.Introduction>
         <Styled.IconBox>
-          <Anchor href={social_address.github} aria-label="github">
+          <Anchor href={social_address.github} aria-label="Github">
             <Icon iconName="github" size="22" />
           </Anchor>
-          <Anchor href={social_address.instagram} aria-label="instagram">
+          <Anchor href={social_address.instagram} aria-label="Instagram">
             <Icon iconName="instagram" />
           </Anchor>
-          <Anchor href={social_address.mail} target="_self" aria-label="mail">
+          <Anchor href={social_address.mail} target="_self" aria-label="Email">
             <Icon iconName="email" />
           </Anchor>
         </Styled.IconBox>

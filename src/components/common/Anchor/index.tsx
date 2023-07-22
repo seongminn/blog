@@ -10,10 +10,11 @@ const Anchor = (props: PropsWithChildren<AnchorProps>) => {
     children,
     target = '_blank',
     rel = 'noopener norefferer',
+    ...rest
   } = props;
 
   return (
-    <a href={href} target={target} rel={rel}>
+    <a href={href} target={target} rel={rel} {...rest}>
       {children}
     </a>
   );
