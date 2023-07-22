@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 
+import Bio from '@/components/common/Bio';
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
 import PostList from '@/components/main/PostList';
@@ -44,6 +45,8 @@ const MainPage = (props: MainPageProps) => {
         thumbnail={publicURL}
         url={siteUrl}
       />
+      <Bio />
+      <hr />
 
       <SectionTitle>새로운 게시물을 확인해보세요 ✨</SectionTitle>
 

@@ -3,14 +3,15 @@ module.exports = {
   description: `돌멩이도 개발 할 수 있는지 확인하기 위해 만든 블로그`,
   author: `@seongminn`,
   siteUrl: `https://seongminn.netlify.app/`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
-  social: {
+  introduction: `J가 되고 싶어 블로그 쓰는 P형 인간`,
+  social_address: {
     twitter: ``, // Your Twitter account
-    github: ``, // Your GitHub account
+    github: `https://github.com/seongminn`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
     linkedin: ``, // Your LinkedIn account
-    instagram: ``, // Your Instagram account
+    instagram: `https://instagram.com/sxxngmini`, // Your Instagram account
+    mail: `mailto:berry9901@gmail.com`,
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],

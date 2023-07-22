@@ -1,5 +1,6 @@
 import * as Styled from './style';
 
+import Bio from '@/components/common/Bio';
 import useComment from '@/hooks/useComment';
 
 interface BodyProps {
@@ -20,10 +21,11 @@ const Body = (props: BodyProps) => {
       />
 
       <hr />
+      <Bio />
 
       <Styled.Tags>
         {tags.map(tag => (
-          <li>{tag}</li>
+          <li key={tag}>{tag}</li>
         ))}
       </Styled.Tags>
 

@@ -25,7 +25,7 @@ export const Detail = styled.div`
     width: 100%;
     word-break: break-all;
 
-    padding: 0 0 80px;
+    padding: 0 0 50px;
   }
 `;
 
