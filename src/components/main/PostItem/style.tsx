@@ -51,7 +51,7 @@ export const Thumbnail = styled(GatsbyImage)`
   border-radius: 4px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
