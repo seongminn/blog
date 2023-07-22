@@ -8,7 +8,7 @@ const SectionTitle = styled.h1`
   line-height: 28px;
   margin-bottom: 50px;
 
-  color: ${({ theme }) => theme.colors.grey_200};
+  color: ${({ theme }) => theme.colors.grey_300};
 `;
 
 export default SectionTitle;

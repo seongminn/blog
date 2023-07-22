@@ -20,7 +20,7 @@ const Head = (props: HeadProps) => {
         <span className="category">{category}</span>
         <span className="date">{date}</span>
       </Styled.InfoArea>
-      <Styled.Image src={publicURL} />
+      <Styled.Image src={publicURL} alt={publicURL} />
     </Styled.Wrapper>
   );
 };
