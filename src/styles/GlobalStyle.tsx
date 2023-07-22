@@ -1,5 +1,4 @@
 import { Global, css } from '@emotion/react';
-import { FunctionComponent } from 'react';
 
 import { prism } from './prism';
 import theme from './theme';
@@ -208,7 +207,7 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle: FunctionComponent = function () {
+const GlobalStyle = () => {
   return <Global styles={defaultStyle} />;
 };
 
