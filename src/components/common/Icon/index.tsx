@@ -4,16 +4,25 @@ import { HTMLAttributes } from 'react';
 
 import Icons, { IconNames } from './Icons';
 
+import theme from '@/styles/theme';
+
 interface IconProps extends HTMLAttributes<HTMLDivElement> {
   iconName: IconNames;
-  color?: string;
-  size?: string;
   hasCursor?: boolean;
+  size?: string;
+  color?: string;
   className?: string;
 }
 
-function Icon(props: IconProps) {
-  const { iconName, color, size = '24', hasCursor = true, ...rest } = props;
+const Icon = (props: IconProps) => {
+  const {
+    iconName,
+    hasCursor = true,
+    size = '24',
+    color = theme.colors.black,
+    ...rest
+  } = props;
+
   const IconComponent = Icons[iconName];
 
   return (
@@ -21,13 +30,13 @@ function Icon(props: IconProps) {
       <IconComponent width="100%" height="100%" />
     </Styled.Wrapper>
   );
-}
+};
 
 export default Icon;
 
 const Styled = {
-  Wrapper: styled.div<Pick<IconProps, 'color' | 'size' | 'hasCursor'>>`
-    ${({ color, size, hasCursor }) => css`
+  Wrapper: styled.div<Pick<IconProps, 'size' | 'color' | 'hasCursor'>>`
+    ${({ size, color, hasCursor }) => css`
       color: ${color};
       width: ${size}px;
       height: ${size}px;
