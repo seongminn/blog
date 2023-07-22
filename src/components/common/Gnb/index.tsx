@@ -16,18 +16,12 @@ function Gnb() {
         </li>
       </Styled.NavItems>
       <Styled.IconContainer>
-        <Icon
-          className="icon__search"
-          iconName="search"
-          color="black"
-          aria-label="Search"
-        />
-        <Icon
-          className="icon__menu"
-          iconName="menu"
-          color="black"
-          aria-label="Menu"
-        />
+        <Styled.SearchButton aria-label="Search">
+          <Icon iconName="search" />
+        </Styled.SearchButton>
+        <Styled.MenuButton aria-label="Menu">
+          <Icon iconName="menu" />
+        </Styled.MenuButton>
       </Styled.IconContainer>
     </Styled.Root>
   );

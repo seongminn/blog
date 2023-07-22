@@ -26,22 +26,17 @@ export const NavItems = styled.ul`
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
+`;
 
-  & div {
-    margin-left: 20px;
+export const SearchButton = styled.button`
+  margin-left: 20px;
+`;
 
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
+export const MenuButton = styled.button`
+  margin-right: 0;
+  display: block;
 
-  & .icon__menu {
-    display: block;
-
-    ${({ theme }) => css`
-      ${theme.mq.tablet} {
-        display: none;
-      }
-    `}
-  }
+  ${({ theme }) => css`${theme.mq.mobile} {
+    display: none;
+  `}
 `;
