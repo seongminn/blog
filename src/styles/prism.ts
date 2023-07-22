@@ -36,11 +36,6 @@ export const prism = css`
     border-radius: 4px;
   }
 
-  .token.operator {
-    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
-      monospace;
-  }
-
   pre[class*='language-']::-moz-selection,
   pre[class*='language-'] ::-moz-selection,
   code[class*='language-']::-moz-selection,
