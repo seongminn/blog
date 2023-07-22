@@ -3,7 +3,7 @@ date: '2020-07-29'
 title: '[Java] 제네릭스'
 category: 'Java'
 summary: '제네릭스가 뭔데 도대체'
-thumbnail: './test.png'
+thumbnail: './test.webp'
 tags: ['# Java', '# 자바의 정석', '# Generics']
 ---
 
