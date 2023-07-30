@@ -172,6 +172,10 @@ const defaultStyle = css`
       padding: 1rem 1.5rem;
 
       font-weight: 500;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     // Adjust List Element Style
@@ -179,7 +183,7 @@ const defaultStyle = css`
     ul {
       list-style: disc;
       margin-left: 20px;
-      padding: 0 0 30px;
+      padding: 20px 0;
 
       li {
         list-style: disc;
@@ -195,11 +199,25 @@ const defaultStyle = css`
       }
     }
 
+    ul {
+      padding: 0;
+    }
+
     // Adjust Link Element Style
     a {
       color: ${theme.colors.primary_darker};
       text-decoration: underline dashed;
       text-underline-offset: 0.45em;
+    }
+
+    figure {
+      margin: 0 0 30px;
+    }
+
+    figcaption {
+      font-size: 14px;
+      color: ${theme.colors.grey_200};
+      text-align: center;
     }
 
     // Adjust Code Style
