@@ -1,8 +1,8 @@
 ---
 date: '2023-07-28'
-title: 'Stitches에 대해서'
+title: 'Stitches로 SSR 완벽하게 대처하기'
 category: 'react'
-summary: '홍대병 프론트엔드 개발자 지망생의 stitches 도전기'
+summary: '홍대병 프론트엔드 개발자 지망생의 Stitches 도전기'
 thumbnail: './image/stitches-black.webp'
 tags: ['# react', '# stitches', '# css-in-js']
 ---
