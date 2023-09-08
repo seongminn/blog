@@ -38,11 +38,66 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    // GA 연동
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        // "2.1. GA 에 프로젝트 추가" 에서 마지막에 얻은 아이디를 넣자.
         trackingIds: ['G-RQGP1G9D6V'],
+      },
+    },
+    // RSS 생성
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.frontmatter.summary,
+                  date: node.frontmatter.date,
+                  url: encodeURI(site.siteMetadata.siteUrl + node.fields.slug),
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      summary
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            // 본인의 blog rss feed용 타이틀을 명시합니다.
+            title: 'SEONGMINN BLOG RSS Feed',
+          },
+        ],
       },
     },
     // image 관련
