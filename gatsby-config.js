@@ -38,6 +38,13 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        // "2.1. GA 에 프로젝트 추가" 에서 마지막에 얻은 아이디를 넣자.
+        trackingIds: ['G-RQGP1G9D6V'],
+      },
+    },
     // image 관련
     `gatsby-transformer-sharp`,
     {
