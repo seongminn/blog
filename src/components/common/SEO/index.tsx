@@ -48,6 +48,12 @@ function SEO({
       <meta name="twitter:site" content="@seongminn" />
       <meta name="twitter:creator" content="@seongminn" />
 
+      <html lang="ko" />
+      <meta
+        name="google-site-verification"
+        content="google2a40ad1a2f2494a8.html"
+      />
+
       {keywords.length > 0 ? (
         <meta name="keywords" content={keywords.join(', ')} />
       ) : (
