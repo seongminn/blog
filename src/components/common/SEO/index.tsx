@@ -53,6 +53,10 @@ function SEO({
         name="google-site-verification"
         content="vX76SDDeFGifDuC6zsHiTeHZpsCU0wjk9smK5JC9qlw"
       />
+      <meta
+        name="naver-site-verification"
+        content="9a51f0d5f728fa881fd62927cc616647be684cb7"
+      />
 
       {keywords.length > 0 ? (
         <meta name="keywords" content={keywords.join(', ')} />
