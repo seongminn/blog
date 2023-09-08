@@ -51,7 +51,7 @@ function SEO({
       <html lang="ko" />
       <meta
         name="google-site-verification"
-        content="google2a40ad1a2f2494a8.html"
+        content="vX76SDDeFGifDuC6zsHiTeHZpsCU0wjk9smK5JC9qlw"
       />
 
       {keywords.length > 0 ? (
