@@ -7,15 +7,15 @@ thumbnail: './image/algorithm.png'
 tags: ['# algorithm', '# javascript', '# boj']
 ---
 
-# 문제
+## 문제
 
 [https://www.acmicpc.net/problem/1051](https://www.acmicpc.net/problem/1051)
 
-# 풀이
+## 풀이
 
 N < 50, M < 50이므로 반복문을 사용할 수 있을 거라 생각했습니다. 주어진 배열을 차례로 순회하며 현재 위치에서 한 변의 길이가 k인 정사각형의 꼭짓점의 값을 검사합니다.
 
-# 소스코드
+## 소스코드
 
 ```js
 const filePath = process.platform === 'linux' ? '/dev/stdin' : 'input.txt';
@@ -43,7 +43,7 @@ for (let i = 0; i < N; i++) {
 console.log(answer);
 ```
 
-# 개선
+## 개선
 
 배열을 순회할 때마다 k를 1로 초기화하는 것은 불필요한 연산을 야기했습니다. 조건을 만족하는 정사각형이 존재하더라도, 정사각형의 넓이가 최대가 아니라면 정답이 될 수 없기 때문입니다. 따라서 max라는 변수를 두고 매 순회마다 k의 값을 max로 초기화합니다. max는 현재까지 발견한 조건을 만족하는 가장 큰 정사각형의 크기를 의미합니다. 이제 넓이가 최대가 아닌 정사각형을 찾는 불필요한 과정을 줄일 수 있기 때문에 시간 복잡도가 줄어들 것으로 예상했습니다.
 

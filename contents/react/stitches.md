@@ -9,13 +9,13 @@ tags: ['# react', '# stitches', '# css-in-js']
 
 새롭게 시작한 프로젝트에서 Stitches를 이용하여 컴포넌트 스타일링 작업을 하게 되었습니다. Stitches를 사용하기로 최종 결정한 이유와, 이를 실제 프로젝트에 적용하는 방법에 대해 가볍게 알아보고자 합니다.
 
-# TL;DR
+## TL;DR
 
 > 1. Stitches는 가볍고 성능이 우수한 CSS-in-JS 라이브러리로, **Near-Zero Runtime**을 특징으로 합니다.
 > 2. SSR(서버 사이드 렌더링)의 필요성이 높아지면서, Stitches는 **모든 브라우저에 호환되는 SSR을 지원**합니다.
 > 3. 다른 CSS-in-JS 라이브러리와 유사한 사용법으로, 사용하기 쉽고 **낮은 러닝 커브**를 가지고 있습니다.
 
-# Stitches
+## Stitches
 
 프론트엔드 생태계에는 다양한 CSS 라이브러리가 존재합니다. 아래는 몇가지 주요한 CSS 라이브러리와 Stitches의 최근 사용 트렌드를 시각화하여 나타낸 모습입니다.
 
@@ -26,7 +26,7 @@ tags: ['# react', '# stitches', '# css-in-js']
 
 다른 라이브러리들에 비해 Stitches는 사용률이 현저히 떨어지는 모습을 확인할 수 있습니다. 그렇다면 왜 굳이 자료도 별로 없고, 사용률도 저조한 Stitches를 골랐을까요? 아래에서 차근차근 살펴보도록 합시다.
 
-## 1. Near-Zero Runtime
+### 1. Near-Zero Runtime
 
 Stitches는 가볍고 빠른 성능을 자랑하는 CSS-in-JS 라이브러리 중 하나입니다. CSS-in-JS는 런타임 시 동적으로 CSS를 생성하여 적용하기 때문에 자바스크립트 코드와 CSS가 상태값을 쉽게 공유할 수 있다는 장점이 있습니다. 하지만 이러한 접근 방식은 런타임 시 자바스크립트 코드를 CSS로 변환하는 시간이 필요하다는 단점이 있기 때문에, 일반적인 CSS 스타일링에 비해 성능이 떨어질 수 있습니다.
 
@@ -41,7 +41,7 @@ Stitches는 이러한 문제를 해결하기 위해 불필요한 속성 보간(P
 
 Stitches의 성능이 타 라이브러리들에 비해 빠른 것을 확인할 수 있습니다.
 
-## 2. Server-Side Rendering 지원
+### 2. Server-Side Rendering 지원
 
 최근 SPA(Single Page Application)에서 발생하는 초기 로딩 속도 문제와 SEO 문제를 해결하기 위해 SSR(Server-Side Rendering)의 필요성이 점점 확대되고 있습니다. Stitches는 이러한 흐름에 발맞춰 모든 브라우저에 호환되는 SSR을 지원합니다.
 
@@ -54,9 +54,9 @@ Stitches의 성능이 타 라이브러리들에 비해 빠른 것을 확인할 �
 >
 > Stitches의 도입을 고민하는 분들에게 이 글이 참고가 되었으면 합니다.
 
-# Stitches 적용하기
+## Stitches 적용하기
 
-## 1. 설치
+### 1. 설치
 
 ```bash
 # With npm
@@ -66,7 +66,7 @@ npm install @stitches/react
 yarn add @stitches/react
 ```
 
-## 2. 사용
+### 2. 사용
 
 다른 CSS-in-JS 라이브러리처럼 `styled`, `css` 함수 등을 불러와 사용할 수 있습니다.
 
@@ -87,7 +87,7 @@ const Button = styled('button', {
 
 이 때 주의할 점은, Stitches는 번들 크기를 최소화하기 위해 문자열 구문 대신, 자바스크립트 객체 표기법을 사용합니다.
 
-## 3. Variants
+### 3. Variants
 
 앞서 살펴본 것처럼 Stitches는 런타임 오버헤드를 줄이기 위해 사전에 Variants를 정의하고 사용합니다. defaultVariants를 통해 기본값을 설정할 수도 있습니다.
 
@@ -127,7 +127,7 @@ const App = () => {
 };
 ```
 
-## 4. Configuration 객체 생성
+### 4. Configuration 객체 생성
 
 Configuration 객체를 생성하여 공통 스타일을 정의할 수 있습니다. `stitches.config.ts` 파일에서 `createStitches` 함수를 불러와 생성할 수 있고, 해당 함수는 여러가지 config 객체를 반환합니다.
 
@@ -187,7 +187,7 @@ const MyComponent = styled('div', {
 });
 ```
 
-## 5. Global Style 설정
+### 5. Global Style 설정
 
 globalCss 함수로 전역 스타일을 지정할 수 있습니다. 해당 함수는 레이아웃을 담당하는 \_app.tsx 파일에서 불러와 호출할 수 있습니다.
 
@@ -212,7 +212,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-## 6. SSR 설정
+### 6. SSR 설정
 
 `createStitches` 함수를 통해 생성된 getCssText 함수로 SSR 설정을 할 수 있습니다.
 
@@ -246,10 +246,10 @@ export default function Document() {
 }
 ```
 
-# 맺음
+## 맺음
 
 세상에는 CSS 라이브러리 뿐만 아니라, 다양한 역할의 라이브러리가 존재합니다. 그 중 본인의 상황에 가장 적절한 것이 무엇인지 판단하고 채택하는 과정이 중요합니다. 저 역시 이번 프로젝트에서 Stitches와 타 CSS 라이브러리를 부족하게나마 비교하면서 자신만의 기준을 적용해보았고, 이를 공부하며 프로젝트에 적용하기까지의 과정이 앞으로 개발을 하는데에 있어 큰 양분이 될 것이라 느낍니다.
 
-#### 참고
+**참고**
 
 - [Stitches 공식 문서](https://stitches.dev/)
