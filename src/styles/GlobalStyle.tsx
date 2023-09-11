@@ -220,6 +220,10 @@ const defaultStyle = css`
       text-align: center;
     }
 
+    em {
+      font-style: italic;
+    }
+
     // Adjust Code Style
     ${prism}
   }
