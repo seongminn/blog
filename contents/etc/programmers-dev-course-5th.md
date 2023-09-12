@@ -3,7 +3,7 @@ date: '2023-09-11'
 title: '프로그래머스 데브코스 프론트엔드 5기 합격 후기'
 category: 'etc'
 summary: '맨날 떨어지기만 하던 내가 처음으로 합격한 비결'
-thumbnail: './image/dev-course-review.webp'
+thumbnail: './image/dev-course-review2.webp'
 tags: ['# KDT', '# programmers', '# dev-course', '# frontend']
 ---
 
