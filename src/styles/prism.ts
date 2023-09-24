@@ -57,7 +57,7 @@ export const prism = css`
 
   pre[class*='language-'] {
     padding: 1em;
-    margin: 0.5em 0 1.7rem;
+    margin: 1.2rem 0;
     overflow: auto;
   }
 

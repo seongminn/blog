@@ -64,6 +64,10 @@ const defaultStyle = css`
     background-color: inherit;
   }
 
+  b {
+    font-weight: bold;
+  }
+
   hr {
     width: 100%;
     background-color: black;
@@ -116,7 +120,7 @@ const defaultStyle = css`
     p {
       padding: 3px 0;
       line-height: 2;
-      margin: 0 0 1.7em;
+      margin: 0.6rem 0;
     }
 
     strong {
@@ -179,7 +183,28 @@ const defaultStyle = css`
     }
 
     // Adjust List Element Style
-    ol,
+
+    ol {
+      list-style: decimal;
+      margin-left: 20px;
+      padding: 20px 0;
+
+      li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+        list-style: decimal;
+        margin: 0.6rem 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    ol + p {
+      margin-top: 1.2rem;
+    }
+
     ul {
       list-style: disc;
       margin-left: 20px;
@@ -199,6 +224,7 @@ const defaultStyle = css`
       }
     }
 
+    ol,
     ul {
       padding: 0;
     }
@@ -211,7 +237,7 @@ const defaultStyle = css`
     }
 
     figure {
-      margin: 0 0 30px;
+      margin: 1.2rem 0;
     }
 
     figcaption {
