@@ -3,7 +3,7 @@ date: '2023-09-24'
 title: '쿠키 도둑 잡아라!'
 category: 'computer science'
 summary: '내가 만든 쿠키, 너를 위해 구운 거 아닌데..'
-thumbnail: './image/cookie-thumbnail.jpg'
+thumbnail: './image/cookie-thumbnail.webp'
 tags: ['# Web', '# HTTP', '# cookie', '# XSS']
 ---
 
@@ -11,7 +11,7 @@ tags: ['# Web', '# HTTP', '# cookie', '# XSS']
 만약 그렇다면, 오늘은 다른 쿠키에 대해서 알아보도록 하겠습니다. 여러분도 웹사이트를 이용하다가 쿠키를 이용해보신 경험이 있을 겁니다. 아래 사진을 볼까요?
 
 <figure>
-  <img src="./image/stackoverflow-cookie.png" alt="stackoverflow-cookie"/>
+  <img src="./image/stackoverflow-cookie.webp" alt="stackoverflow-cookie"/>
   <figcaption figcaption>스택오버플로우의 쿠키 수집 허용 팝업</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ HTTP는 상태가 없습니다. 이 말은, 서버가 HTTP 요청을 받았을 �
 ### 쿠키의 작동 방식
 
 <figure>
-  <img src="./image/cookie-flow.png" alt="쿠키의 작동 방식"/>
+  <img src="./image/cookie-flow.webp" alt="쿠키의 작동 방식"/>
   <figcaption figcaption>쿠키의 작동 방식</figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ Reflected XSS는 스크립트 코드를 입력하자마자 결과가 발생는 �
 `input` 창을 통해 이름을 입력 받고, 버튼을 클릭하면 이를 화면에 띄워주는 사이트가 있습니다.
 
 <figure>
-  <img src="./image/xss-input-test.png" alt="input 예시"/>
+  <img src="./image/xss-input-test.webp" alt="input 예시"/>
 </figure>
 
 이름을 입력하고 제출 버튼을 클릭하면 정상적으로 작동하는 것을 확인할 수 있습니다. 그럼, 다음과 같은 스크립트 코드를 입력하면 어떻게 될까요?
@@ -109,7 +109,7 @@ Reflected XSS는 스크립트 코드를 입력하자마자 결과가 발생는 �
 `<img src="#" onerror="alert('버그 발생! 🐛')" />`
 
 <figure>
-  <img src="./image/xss-hijacking.png" alt="스크립트 코드를 통한 XSS 공격"/>
+  <img src="./image/xss-hijacking.webp" alt="스크립트 코드를 통한 XSS 공격"/>
 </figure>
 
 이렇게 `alert` 창이 실행됩니다! 지금의 경우에는 스크립트 코드에 악의적인 의도가 없어 보이지만, 공격자는 어떤 의도를 품고 있을지 모릅니다. 쿠키는 브라우저에 저장되어 있기 때문에 `document.cookie`와 같은 자바스크립트 코드로 접근할 수 있습니다. 만약 `alert` 함수 대신 `document.cookie`가 입력되어 있었다면 어떻게 될까요? 사용자의 정보가 노출되어 큰 문제가 발생할 수 있습니다. 상상만 해도 끔찍하네요😥
