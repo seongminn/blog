@@ -1,10 +1,16 @@
 import { graphql } from 'gatsby';
 import { useRef } from 'react';
 
-import Blog from '@/components/blog';
+import BlogContainer from '@/components/blog/BlogContainer';
+import BlogDetail from '@/components/blog/BlogDetail';
+import BlogHead from '@/components/blog/BlogHead';
+import Comment from '@/components/blog/Comment/inex';
+import Tags from '@/components/blog/Tags';
 import TOC from '@/components/blog/TOC';
+import Bio from '@/components/common/Bio';
 import Layout from '@/components/common/Layout';
 import SEO from '@/components/common/SEO';
+import useComment from '@/hooks/useComment';
 import useItemHeight from '@/hooks/useHeight';
 import { PostPageItemProps } from '@/types/PostItem.types';
 
@@ -24,6 +30,8 @@ const PostTemplate = (props: PostTemplateProps) => {
   const { category, date, summary, title, thumbnail, tags } = frontmatter;
   const { publicURL } = thumbnail;
 
+  const { commentRef } = useComment();
+
   const divRef = useRef<HTMLDivElement>(null);
   const height = useItemHeight(divRef);
 
@@ -35,19 +43,23 @@ const PostTemplate = (props: PostTemplateProps) => {
         thumbnail={publicURL}
         url={href}
       />
-      <Blog>
-        <Blog.Head
-          title={title}
-          category={category}
-          date={date}
-          publicURL={publicURL}
-          divRef={divRef}
-        />
 
-        <Blog.Body html={html} tags={tags} />
+      <BlogHead
+        title={title}
+        category={category}
+        date={date}
+        publicURL={publicURL}
+        divRef={divRef}
+      />
 
+      <BlogContainer>
+        <BlogDetail html={html} />
+        <hr />
+        <Bio />
+        <Tags tags={tags} />
         <TOC height={height} />
-      </Blog>
+      </BlogContainer>
+      <Comment commentRef={commentRef} />
     </Layout>
   );
 };

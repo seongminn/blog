@@ -5,9 +5,9 @@ export const SideBar = styled.aside<{ height: number }>`
   display: none;
   height: 100%;
   position: absolute;
-  right: 0;
+  left: 100%;
   top: 0;
-  padding-top: ${props => `${props.height}px`};
+  /* padding-top: ${props => `${props.height}px`}; */
 
   ${({ theme }) => css`
     ${theme.mq.mobile} {
