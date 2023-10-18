@@ -172,7 +172,7 @@ const defaultStyle = css`
       border: 1px solid ${theme.colors.light_grey_100};
       border-radius: 5px;
 
-      margin: 0 0 1.7rem;
+      margin: 0.6rem 0;
       padding: 1rem 1.5rem;
 
       font-weight: 500;

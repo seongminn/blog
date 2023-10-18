@@ -63,7 +63,7 @@ export const Image = styled.img`
   width: 100%;
 
   aspect-ratio: 2 / 1;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 4px;
 
   margin-top: 50px;

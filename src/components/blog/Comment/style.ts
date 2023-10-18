@@ -17,6 +17,16 @@ export const Comment = styled.div`
     }
   `}
 
+  ${({ theme }) => css`
+    ${theme.mq.mobile} {
+      padding-right: 20px;
+    }
+
+    ${theme.mq.desktop} {
+      padding-right: 40px;
+    }
+  `}
+
   .utterances {
     min-width: 100%;
     margin: 0;
