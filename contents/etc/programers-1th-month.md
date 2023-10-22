@@ -3,7 +3,7 @@ date: '2023-10-21'
 title: '[월간 회고] 프로그래머스 데브코스 1차 단위 기간 회고'
 category: 'etc'
 summary: '무지롱이에서 프롱이가 되기까지'
-thumbnail: './image/짱구 회고.jpg'
+thumbnail: './image/짱구-회고.webp'
 tags: ['# retrospect', '# programmers', '# dev-course', '# MIL']
 ---
 
