@@ -23,6 +23,7 @@ function SEO({
   const data: SEOType = useStaticQuery(seoQuery);
 
   const metaDescription = description || data.site.siteMetadata.description;
+  const siteUrl = data.site.siteMetadata.siteUrl;
 
   return (
     <Helmet
@@ -37,14 +38,14 @@ function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={thumbnailSrc} />
+      <meta property="og:image" content={`${siteUrl}${thumbnailSrc || ''}`} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={title} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={thumbnailSrc} />
+      <meta name="twitter:image" content={`${siteUrl}${thumbnailSrc || ''}`} />
       <meta name="twitter:site" content="@seongminn" />
       <meta name="twitter:creator" content="@seongminn" />
 
@@ -74,6 +75,7 @@ const seoQuery = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }
