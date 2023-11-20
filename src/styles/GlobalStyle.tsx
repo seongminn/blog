@@ -169,13 +169,17 @@ const defaultStyle = css`
     // Adjust Quotation Element Style
     blockquote {
       background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.light_grey_100};
-      border-radius: 5px;
+      border-left: 0.25rem solid ${theme.colors.light_grey_100};
 
-      margin: 0.6rem 0;
-      padding: 1rem 1.5rem;
+      margin: 0.75rem 0;
+      padding-left: 1rem;
 
+      font-style: italic;
       font-weight: 500;
+
+      p:first-of-type {
+        margin-top: 0;
+      }
 
       p:last-of-type {
         margin-bottom: 0;
@@ -233,7 +237,7 @@ const defaultStyle = css`
     a {
       color: ${theme.colors.primary_darker};
       text-decoration: underline dashed;
-      text-underline-offset: 0.45em;
+      text-underline-offset: 0.25em;
     }
 
     figure {
@@ -248,6 +252,11 @@ const defaultStyle = css`
 
     em {
       font-style: italic;
+    }
+
+    s,
+    del {
+      color: #999;
     }
 
     // Adjust Code Style
