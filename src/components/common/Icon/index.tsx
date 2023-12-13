@@ -15,13 +15,7 @@ interface IconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Icon = (props: IconProps) => {
-  const {
-    iconName,
-    hasCursor = true,
-    size = '24',
-    color = theme.colors.black,
-    ...rest
-  } = props;
+  const { iconName, hasCursor = true, size = '24', color, ...rest } = props;
 
   const IconComponent = Icons[iconName];
 
