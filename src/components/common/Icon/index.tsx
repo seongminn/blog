@@ -37,9 +37,10 @@ export default Icon;
 const Styled = {
   Wrapper: styled.div<Pick<IconProps, 'size' | 'color' | 'hasCursor'>>`
     ${({ size, color, hasCursor }) => css`
-      color: ${color};
       width: ${size}px;
       height: ${size}px;
+
+      color: ${color};
       cursor: ${hasCursor && 'pointer'};
 
       & * {

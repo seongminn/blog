@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export const Comment = styled.div`
   width: 100%;
-  margin: 0 0 100px 0;
+  margin: 0 0 100px;
 
   ${({ theme }) => css`
     ${theme.mq.mobile} {
@@ -29,10 +29,11 @@ export const Comment = styled.div`
 
   .utterances {
     min-width: 100%;
+
     margin: 0;
   }
 
   .timeline {
-    padding: 0px;
+    padding: 0;
   }
 `;

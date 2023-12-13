@@ -1,18 +1,19 @@
 import styled from '@emotion/styled';
 
 export const Root = styled.footer`
+  display: grid;
   position: relative;
 
-  display: grid;
+  padding: 60px 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
   place-items: center;
 
   min-width: 300px;
-  padding: 60px 0;
-  font-size: 15px;
-  text-align: center;
-  line-height: 1.5;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: 13px;
   }
 
@@ -29,11 +30,10 @@ export const Root = styled.footer`
 `;
 
 export const Contact = styled.div`
-  width: 85px;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
+  width: 85px;
   margin-bottom: 30px;
 `;

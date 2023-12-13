@@ -28,12 +28,12 @@ const NotFoundPage = () => {
 };
 
 const NotFoundWrapper = styled.div`
-  height: 100vh;
-
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  height: 100vh;
 
   .title {
     font-weight: 700;
@@ -51,11 +51,12 @@ const NotFoundWrapper = styled.div`
   .error {
     font-size: 14px;
     font-weight: bold;
+
     margin-bottom: 15px;
 
     ${({ theme }) => css`
       background-image: ${theme.colors.primary_gradient};
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     `}
 
@@ -68,6 +69,7 @@ const NotFoundWrapper = styled.div`
 
   .description {
     font-size: 14px;
+
     margin-bottom: 50px;
 
     ${({ theme }) => css`
@@ -79,14 +81,17 @@ const NotFoundWrapper = styled.div`
 
   .button {
     font-size: 14px;
+
     padding: 0.7rem 1rem;
+
     border: 1px solid ${({ theme }) => theme.colors.primary};
     border-radius: 5px;
 
     ${({ theme }) => css`
       ${theme.mq.mobile} {
-        font-size: 16px;
         padding: 0.8rem 1.5rem;
+
+        font-size: 16px;
       }
     `}
   }

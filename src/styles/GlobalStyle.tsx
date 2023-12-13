@@ -15,17 +15,21 @@ const defaultStyle = css`
     padding: 0;
     box-sizing: border-box;
     font: inherit;
+
     color: inherit;
     flex-shrink: 0;
 
     scroll-behavior: smooth;
 
-    &::-moz-selection {
-      background: ${theme.colors.primary};
-      color: #fff;
-    }
     &::selection {
       background: ${theme.colors.primary};
+
+      color: #fff;
+    }
+
+    &::selection {
+      background: ${theme.colors.primary};
+
       color: #fff;
     }
   }
@@ -35,9 +39,10 @@ const defaultStyle = css`
       Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
       'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol', sans-serif;
+
     letter-spacing: -0.03px;
 
-    -webkit-text-size-adjust: antialiased;
+    text-size-adjust: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -46,6 +51,7 @@ const defaultStyle = css`
 
   a {
     text-decoration: none;
+
     color: inherit;
   }
 
@@ -60,7 +66,9 @@ const defaultStyle = css`
 
   button {
     cursor: pointer;
+
     border: 0;
+
     background-color: inherit;
   }
 
@@ -69,66 +77,76 @@ const defaultStyle = css`
   }
 
   hr {
-    width: 100%;
-    background-color: black;
-    margin: 3rem auto 4rem;
-    border: 0;
-
-    overflow: visible;
-    border: 0;
-
-    background-color: ${theme.colors.primary_48};
     display: block;
-    height: 7px;
-    width: 7px;
-    border-radius: 50%;
+    overflow: visible;
 
     position: relative;
 
-    &:before {
-      content: '';
-      background-color: ${theme.colors.primary_48};
+    width: 100%;
+    width: 7px;
+    height: 7px;
+    margin: 3rem auto 4rem;
+    border: 0;
+    border-radius: 50%;
+
+    background-color: black;
+    background-color: ${theme.colors.primary_48};
+
+    &::before {
       display: block;
-      height: 7px;
-      width: 7px;
-      border-radius: 50%;
       position: absolute;
       left: -2em;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background-color: ${theme.colors.primary_48};
+      content: '';
+
       /* animation: dot-move-left 1s ease-out forwards; */
     }
 
-    &:after {
-      content: '';
-      background-color: ${theme.colors.primary_48};
+    &::after {
       display: block;
-      height: 7px;
-      width: 7px;
-      border-radius: 50%;
       position: absolute;
       left: 2em;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background-color: ${theme.colors.primary_48};
+      content: '';
+
       /* animation: dot-move-right 1s ease-out forwards; */
     }
   }
 
   div.post {
-    // Markdown Style
+    /* Markdown Style */
     line-height: 1.8;
     font-size: 16px;
     font-weight: 400;
+    word-break: normal;
 
-    // Apply Padding Attribute to All Elements
+    /* Apply Padding Attribute to All Elements */
     p {
-      padding: 3px 0;
-      line-height: 2;
       margin: 0.6rem 0;
+      padding: 3px 0;
+
+      line-height: 2;
     }
 
     strong {
       display: contents;
+
       font-weight: 600;
     }
 
-    // Adjust Heading Element Style
+    /* Adjust Heading Element Style */
     h1,
     h2,
     h3,
@@ -166,13 +184,14 @@ const defaultStyle = css`
       font-size: 18px;
     }
 
-    // Adjust Quotation Element Style
+    /* Adjust Quotation Element Style */
     blockquote {
-      background-color: ${theme.colors.white};
-      border-left: 0.25rem solid ${theme.colors.light_grey_100};
-
       margin: 0.75rem 0;
       padding-left: 1rem;
+
+      border-left: 0.25rem solid ${theme.colors.light_grey_100};
+
+      background-color: ${theme.colors.white};
 
       font-style: italic;
       font-weight: 500;
@@ -186,18 +205,21 @@ const defaultStyle = css`
       }
     }
 
-    // Adjust List Element Style
+    /* Adjust List Element Style */
 
     ol {
       list-style: decimal;
+
       margin-left: 20px;
       padding: 20px 0;
 
       li {
         display: list-item;
+
+        margin: 0.6rem 0;
+
         text-align: -webkit-match-parent;
         list-style: decimal;
-        margin: 0.6rem 0;
       }
 
       p {
@@ -211,6 +233,7 @@ const defaultStyle = css`
 
     ul {
       list-style: disc;
+
       margin-left: 20px;
       padding: 20px 0;
 
@@ -218,11 +241,11 @@ const defaultStyle = css`
         list-style: disc;
 
         &::marker {
+          text-align: start !important;
+          text-indent: 0 !important;
           unicode-bidi: isolate;
           font-variant-numeric: tabular-nums;
           text-transform: none;
-          text-indent: 0px !important;
-          text-align: start !important;
           text-align-last: start !important;
         }
       }
@@ -233,7 +256,7 @@ const defaultStyle = css`
       padding: 0;
     }
 
-    // Adjust Link Element Style
+    /* Adjust Link Element Style */
     a {
       color: ${theme.colors.primary_darker};
       text-decoration: underline dashed;
@@ -245,8 +268,8 @@ const defaultStyle = css`
     }
 
     figcaption {
-      font-size: 14px;
       color: ${theme.colors.grey_200};
+      font-size: 14px;
       text-align: center;
     }
 
@@ -259,7 +282,7 @@ const defaultStyle = css`
       color: #999;
     }
 
-    // Adjust Code Style
+    /* Adjust Code Style */
     ${prism}
   }
 `;

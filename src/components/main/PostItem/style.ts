@@ -4,11 +4,11 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const Root = styled.li`
   & a {
-    position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    position: relative;
 
     margin-bottom: 60px;
 
@@ -19,10 +19,11 @@ export const Root = styled.li`
     ${({ theme }) => css`
       ${theme.mq.mobile} {
         display: grid;
-        grid-template-columns: 170px auto;
         align-items: center;
+        grid-template-columns: 170px auto;
 
         margin-bottom: 100px;
+
         transition: transform 0.2s ease-in-out;
 
         &:hover {
@@ -37,7 +38,8 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 30px 0 0 0;
+
+  margin: 30px 0 0;
 
   ${({ theme }) => css`
     ${theme.mq.mobile} {
@@ -48,21 +50,23 @@ export const InfoContainer = styled.div`
 
 export const Thumbnail = styled(GatsbyImage)`
   isolation: isolate;
+
   border-radius: 4px;
 `;
 
 export const Title = styled.h2`
   display: -webkit-box;
   overflow: hidden;
+
+  margin-bottom: 10px;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 32px;
-  letter-spacing: -0.2px;
-  margin-bottom: 10px;
 `;
 
 export const Description = styled.p`
@@ -85,6 +89,7 @@ export const Description = styled.p`
 
 export const Time = styled.time`
   font-size: 15px;
+
   margin-top: 15px;
 
   ${({ theme }) =>
@@ -95,18 +100,21 @@ export const Time = styled.time`
 
 export const TagItems = styled.ul`
   display: flex;
+
   margin-bottom: 15px;
 
   ${({ theme }) => css`
     & li {
-      border-radius: 4px;
-      font-size: 12px;
-      line-height: 28px;
-      padding: 0 8px;
       margin-right: 15px;
+      padding: 0 8px;
+
+      border-radius: 4px;
+
+      background-color: #f5f5f5;
 
       color: ${theme.colors.grey_300};
-      background-color: #f5f5f5;
+      font-size: 12px;
+      line-height: 28px;
     }
   `}
 `;

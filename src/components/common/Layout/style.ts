@@ -7,11 +7,11 @@ export const Root = styled.div`
 
 export const Container = styled.section`
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  flex-direction: column;
 
-  padding: 120px 30px 100px;
   margin: 0 auto;
+  padding: 120px 30px 100px;
 
   max-width: ${({ theme }) => theme.layouts.maxWidth};
   min-width: 300px;
