@@ -39,6 +39,7 @@
     "react-scroll": "^1.8.9"
   },
   "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/react-scroll": "^1.8.7",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
@@ -47,7 +48,14 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "postcss": "^8.4.32",
+    "postcss-styled-syntax": "^0.5.0",
+    "postcss-syntax": "^0.36.2",
     "prettier": "^2.8.7",
+    "stylelint": "^16.0.2",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^35.0.0",
+    "stylelint-order": "^6.0.4",
     "typescript": "^5.0.2"
   },
   "keywords": [
