@@ -12,7 +12,7 @@ export const Root = styled.header<{ isHide: boolean }>`
   position: fixed;
   inset: 0;
 
-  z-index: 999;
+  z-index: 10;
 
   transform: translateY(0%);
   transition: transform 0.3s;
@@ -28,7 +28,6 @@ export const Root = styled.header<{ isHide: boolean }>`
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
 
   width: 100%;
   margin: 0 auto;
@@ -37,6 +36,8 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled(Link)`
+  flex: 1;
+
   font-family: Blinker;
 
   font-size: 26px;
@@ -49,19 +50,7 @@ export const Logo = styled(Link)`
   `}
 `;
 
-export const IconContainer = styled.div`
+export const Navbar = styled.div`
   display: flex;
   align-items: center;
-
-  & div {
-    margin-left: 20px;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  & .icon__menu {
-    display: none;
-  }
 `;

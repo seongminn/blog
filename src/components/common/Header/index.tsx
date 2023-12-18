@@ -1,43 +1,57 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useRef } from 'react';
 
 import * as Styled from './style';
 import Gnb from '../Gnb';
+import Modal from '../Modal';
+import SearchShortcut from '../SearchShortcut';
 
-import { throttle } from '@/utils/throttle';
+import SearchModal from '@/components/SearchModal';
+import useHotKeys, { Hotkeys } from '@/hooks/useHotKeys';
+import useModal from '@/hooks/useModal';
+import useScroll from '@/hooks/useScroll';
 
 function Header() {
-  const [isHide, setIsHide] = useState(false);
-  const [scroll, setScroll] = useState(0);
-
-  const onScroll = () => {
-    const pageYoffset = window.scrollY;
-    const deltaY = pageYoffset - scroll;
-    const hide = pageYoffset !== 0 && deltaY >= 1;
-
-    setIsHide(hide);
-    setScroll(pageYoffset);
-  };
-
-  const throttled = useMemo(() => throttle(onScroll, 250), [scroll]);
-
-  useEffect(() => {
-    setScroll(window.scrollY);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', throttled, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', throttled);
-    };
-  }, [scroll]);
+  const [isOpen, toggle, setModalOpen] = useModal();
+  const searchRef = useRef<HTMLInputElement>(null);
+  const isHide = useScroll();
+  const hotkeys: Hotkeys[] = useMemo(
+    () => [
+      {
+        combo: 'ctrl+shift+k',
+        onKeyUp: () => {
+          toggle();
+        },
+        onKeyDown: () => {
+          //
+        },
+      },
+      {
+        combo: 'esc',
+        onKeyUp: () => {
+          setModalOpen(false);
+        },
+        onKeyDown: () => {
+          // ...
+        },
+      },
+    ],
+    [],
+  );
+  useHotKeys(hotkeys);
 
   return (
     <Styled.Root isHide={isHide}>
       <Styled.Container>
         <Styled.Logo to="/">seongminn.dev</Styled.Logo>
 
-        <Gnb />
+        <Styled.Navbar>
+          <Gnb />
+          <SearchShortcut handleModalOpen={toggle} />
+        </Styled.Navbar>
       </Styled.Container>
+      <Modal visible={isOpen} onClose={() => setModalOpen(false)}>
+        <SearchModal ref={searchRef} />
+      </Modal>
     </Styled.Root>
   );
 }

@@ -5,9 +5,9 @@ const useToggle = (initialValue = false) => {
   const toggle = useCallback(() => {
     setState(prev => !prev);
   }, []);
-  const setBoolean = (nextState: boolean) => {
+  const setBoolean = useCallback((nextState: boolean) => {
     setState(nextState);
-  };
+  }, []);
 
   return [state, toggle, setBoolean] as const;
 };

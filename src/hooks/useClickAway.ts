@@ -3,10 +3,7 @@ import { useRef } from 'react';
 
 type ClickAwayHandler = (e: MouseEvent | TouchEvent) => void;
 
-const useClickAway = <T extends Element>(
-  target: HTMLElement,
-  handler: ClickAwayHandler,
-) => {
+const useClickAway = <T extends Element>(handler: ClickAwayHandler) => {
   const ref = useRef<T>(null);
   const savedHandler = useRef(handler);
 
@@ -26,12 +23,12 @@ const useClickAway = <T extends Element>(
       !element.contains(e.target as Node) && savedHandler.current(e);
     };
 
-    target.addEventListener('mousedown', handleMouseEvent);
-    target.addEventListener('touchstart', handleTouceEvent);
+    document.addEventListener('mousedown', handleMouseEvent, { passive: true });
+    document.addEventListener('touchstart', handleTouceEvent);
 
     return () => {
-      target.removeEventListener('mousedown', handleMouseEvent);
-      target.removeEventListener('touchstart', handleTouceEvent);
+      document.removeEventListener('mousedown', handleMouseEvent);
+      document.removeEventListener('touchstart', handleTouceEvent);
     };
   }, [ref]);
 
